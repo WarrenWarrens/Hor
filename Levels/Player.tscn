@@ -2,8 +2,84 @@
 
 [ext_resource type="Script" uid="uid://bx7ple8s1lhyb" path="res://Levels/Player.gd" id="1_bw61f"]
 [ext_resource type="Texture2D" uid="uid://dvjtaamqipajq" path="res://Assets/Head/port8.png" id="1_un2fj"]
+[ext_resource type="Texture2D" uid="uid://3cjia11njd6w" path="res://Assets/Head/port1.png" id="2_jq20s"]
+[ext_resource type="Texture2D" uid="uid://k1u3ljtb65a0" path="res://Assets/Head/port2.png" id="3_q6sqq"]
+[ext_resource type="Texture2D" uid="uid://i5wgft13m7fr" path="res://Assets/Head/port4.png" id="4_mgsru"]
+[ext_resource type="Texture2D" uid="uid://crpih4bhlt2h4" path="res://Assets/Head/port5.png" id="5_yewb1"]
+[ext_resource type="Texture2D" uid="uid://dnqe2o3tfecc5" path="res://Assets/Head/port7.png" id="6_xspdx"]
+[ext_resource type="Texture2D" uid="uid://uau0x3nnylb8" path="res://Assets/Head/port9.png" id="8_w87dc"]
+[ext_resource type="Texture2D" uid="uid://hy2qktm52xdl" path="res://Assets/Head/port10.png" id="9_joh81"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ttpud"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ttpud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jq20s")
+}],
+"loop": 1,
+"name": &"Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q6sqq")
+}],
+"loop": 1,
+"name": &"BackLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mgsru")
+}],
+"loop": 1,
+"name": &"BackRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yewb1")
+}],
+"loop": 1,
+"name": &"Front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xspdx")
+}],
+"loop": 1,
+"name": &"FrontLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_un2fj")
+}],
+"loop": 1,
+"name": &"FrontRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w87dc")
+}],
+"loop": 1,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_joh81")
+}],
+"loop": 1,
+"name": &"Right",
+"speed": 5.0
+}]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ttpud"]
 
 [node name="Player" type="CharacterBody3D" unique_id=711497073 groups=["player"]]
 script = ExtResource("1_bw61f")
@@ -11,6 +87,13 @@ script = ExtResource("1_bw61f")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=276468983]
 shape = SubResource("CapsuleShape3D_ttpud")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1417715221]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1550670020]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 billboard = 2
-texture = ExtResource("1_un2fj")
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ttpud")
+animation = &"Right"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1889382618]
+transform = Transform3D(0.1, 0, 0, 0, -0.1, -8.742278e-08, 0, 8.742278e-09, -1, 0, 0, -1)
+mesh = SubResource("PrismMesh_ttpud")

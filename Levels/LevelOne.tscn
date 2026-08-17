@@ -45,7 +45,17 @@ points = PackedVector3Array(1.5, 9, 16.5, 1.5, 0.5, 16.5, -3.5, 9, 16.5, -3.5, 0
 points = PackedVector3Array(12, 9.5, 16.5, 12, 9, 16.5, -10.5, 9.5, 16.5, -10.5, 9, 16.5, 12, 9.5, -7.5, 12, 9, -7.5, -10.5, 9.5, -7.5, -10.5, 9, -7.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ttpud"]
-size = Vector3(12, 12, 40)
+size = Vector3(22.767578, 12, 40)
+
+[sub_resource type="Environment" id="Environment_ttpud"]
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.6913043, 0.7191676, 0.76098937, 1)
+fog_light_energy = 10.86
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_emission = Color(0.021434637, 0.021434635, 0.021434633, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1827959902]
 
@@ -80,10 +90,10 @@ shape = SubResource("ConvexPolygonShape3D_ugo6b")
 shape = SubResource("ConvexPolygonShape3D_avsmw")
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("4_obhin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.720553, 2.4970891, -1.2071354)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14.113964, 2.4970891, -12.199507)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2025295628]
-transform = Transform3D(-0.90556884, -0.13740556, 0.4013288, 0, 0.94608533, 0.32391742, -0.42419937, 0.2933295, -0.8567454, 5.82842, 8.391722, -4.5727034)
+transform = Transform3D(-0.77971816, 0, 0.62613076, 0, 1, 0, -0.62613076, 0, -0.77971816, 6.8316674, 6.4180894, -6.541145)
 
 [node name="Camera3D2" type="Camera3D" parent="." unique_id=918720075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.624445, 5.631765, 5.156868)
@@ -103,5 +113,8 @@ script = ExtResource("5_2oyfs")
 target_camera = NodePath("../Camera3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=641872071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0501318, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3336573, 0, 0)
 shape = SubResource("BoxShape3D_ttpud")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=311291876]
+environment = SubResource("Environment_ttpud")

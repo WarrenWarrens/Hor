@@ -17,36 +17,36 @@ shader = ExtResource("2_cruaa")
 shader_parameter/polar_coordinates = false
 shader_parameter/polar_center = Vector2(0.5, 0.5)
 shader_parameter/polar_zoom = 1.4
-shader_parameter/polar_repeat = 2.0
+shader_parameter/polar_repeat = 20.0
 shader_parameter/spin_rotation = 7.0
-shader_parameter/spin_speed = 6.0
+shader_parameter/spin_speed = 4.0
 shader_parameter/offset = Vector2(0, 0)
-shader_parameter/colour_1 = Color(0.708866, 0, 0, 1)
-shader_parameter/colour_2 = Color(4.0059752, 1.8020818, 0.54918367, 1)
-shader_parameter/colour_3 = Color(0, 0, 0, 1)
-shader_parameter/contrast = 2.0
-shader_parameter/spin_amount = 0.15
-shader_parameter/pixel_filter = 400.0
+shader_parameter/colour_1 = Color(0.019393805, 0, 0, 1)
+shader_parameter/colour_2 = Color(18.892157, 8.609527, 6.214941, 0)
+shader_parameter/colour_3 = Color(0, 0, 0.30588236, 0.047058824)
+shader_parameter/contrast = 3.3
+shader_parameter/spin_amount = 0.12
+shader_parameter/pixel_filter = 200.0
 
 [node name="MainMenu" type="Node2D" unique_id=1743697251]
 process_mode = 3
 script = ExtResource("1_otibh")
 
 [node name="Label" type="Label" parent="." unique_id=4425683]
-offset_left = 3.0
+offset_left = 1.0
 offset_top = 9.0
-offset_right = 637.0
+offset_right = 319.0
 offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("2_b76km")
-theme_override_font_sizes/font_size = 60
-text = "Goom"
+theme_override_font_sizes/font_size = 14
+text = "Psx_prototype"
 horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=2001701567]
 offset_left = -1.0
-offset_top = 149.0
-offset_right = 637.0
-offset_bottom = 397.0
+offset_top = 38.0
+offset_right = 318.0
+offset_bottom = 237.0
 
 [node name="MenuButtons" type="VBoxContainer" parent="CenterContainer" unique_id=1012700879]
 layout_mode = 2
@@ -55,25 +55,25 @@ theme_override_constants/separation = 20
 [node name="Play" type="Button" parent="CenterContainer/MenuButtons" unique_id=190024920]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b76km")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "Levels"
 
 [node name="Options" type="Button" parent="CenterContainer/MenuButtons" unique_id=504399676]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b76km")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "Options"
 
 [node name="Credits" type="Button" parent="CenterContainer/MenuButtons" unique_id=437880587]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b76km")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "Credits"
 
 [node name="Exit" type="Button" parent="CenterContainer/MenuButtons" unique_id=1154746904]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b76km")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "Exit"
 
 [node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1286223992]
@@ -137,13 +137,13 @@ layout_mode = 2
 [node name="TestLevelButton" type="Button" parent="CenterContainer/LevelsMenu" unique_id=1745361254]
 layout_mode = 2
 theme = SubResource("Theme_b76km")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "Test Level Two"
 
 [node name="BackButton" type="Button" parent="CenterContainer/LevelsMenu" unique_id=1097326960]
 layout_mode = 2
 theme = SubResource("Theme_3clmd")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "Back"
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=1019917609]
@@ -152,8 +152,8 @@ layer = -1
 [node name="MBG1" type="ColorRect" parent="Background" unique_id=2118255790]
 z_index = -10
 material = SubResource("ShaderMaterial_dfu4m")
-offset_right = 640.0
-offset_bottom = 480.0
+offset_right = 320.0
+offset_bottom = 240.0
 mouse_filter = 2
 color = Color(0.964773, 0.848416, 0.869401, 1)
 
