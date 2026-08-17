@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dwse1oicpbcep"
+path="res://.godot/imported/TestingGrounds22.map-0da6e3db64a6c6464a534a2ade4f3f8c.tres"
+
+[deps]
+
+source_file="res://Levels/MAP/TestingGrounds22.map"
+dest_files=["res://.godot/imported/TestingGrounds22.map-0da6e3db64a6c6464a534a2ade4f3f8c.tres"]
+
+[params]
+

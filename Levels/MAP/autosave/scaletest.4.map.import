@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://wn1bqesbkmk"
+path="res://.godot/imported/scaletest.4.map-873d88dbd4f137e415ba9087e15d92e5.tres"
+
+[deps]
+
+source_file="res://Levels/MAP/autosave/scaletest.4.map"
+dest_files=["res://.godot/imported/scaletest.4.map-873d88dbd4f137e415ba9087e15d92e5.tres"]
+
+[params]
+

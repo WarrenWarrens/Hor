@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3rbtmsitq5v4"]
+
+[ext_resource type="Script" uid="uid://bx7ple8s1lhyb" path="res://Levels/Player.gd" id="1_bw61f"]
+[ext_resource type="Texture2D" uid="uid://dvjtaamqipajq" path="res://Assets/Head/port8.png" id="1_un2fj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ttpud"]
+
+[node name="Player" type="CharacterBody3D" unique_id=711497073 groups=["player"]]
+script = ExtResource("1_bw61f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=276468983]
+shape = SubResource("CapsuleShape3D_ttpud")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1417715221]
+billboard = 2
+texture = ExtResource("1_un2fj")

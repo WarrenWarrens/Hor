@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://c2ujrxj3wvh5v"
+path="res://.godot/imported/Streets.map-20cf3fe0a5a430455fbfa4b4a9647e60.tres"
+
+[deps]
+
+source_file="res://Levels/MAP/Streets.map"
+dest_files=["res://.godot/imported/Streets.map-20cf3fe0a5a430455fbfa4b4a9647e60.tres"]
+
+[params]
+

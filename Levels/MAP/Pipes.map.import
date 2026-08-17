@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://yntrfxnu0bjo"
+path="res://.godot/imported/Pipes.map-a23a945a87799da2ddd87ec9027dfb08.tres"
+
+[deps]
+
+source_file="res://Levels/MAP/Pipes.map"
+dest_files=["res://.godot/imported/Pipes.map-a23a945a87799da2ddd87ec9027dfb08.tres"]
+
+[params]
+

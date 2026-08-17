@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://4ensae65yciw"
+path="res://.godot/imported/Stairs.map-55d5be16269a9c2f46163cebc174f032.tres"
+
+[deps]
+
+source_file="res://Levels/MAP/Stairs.map"
+dest_files=["res://.godot/imported/Stairs.map-55d5be16269a9c2f46163cebc174f032.tres"]
+
+[params]
+

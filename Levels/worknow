@@ -1,0 +1,8 @@
+// entity 0
+{
+"mapversion" "220"
+"wad" ""
+"classname" "worldspawn"
+"_tb_mod" "textures"
+"_tb_layer_omit_from_export" "1"
+}

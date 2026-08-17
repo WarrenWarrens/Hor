@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://fporep8xh5nm"
+path="res://.godot/imported/TestingGrounds.map-c188f544500b79d95d6e7b53190265b6.tres"
+
+[deps]
+
+source_file="res://Levels/MAP/TestingGrounds.map"
+dest_files=["res://.godot/imported/TestingGrounds.map-c188f544500b79d95d6e7b53190265b6.tres"]
+
+[params]
+
