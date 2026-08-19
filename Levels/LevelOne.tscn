@@ -90,7 +90,7 @@ shape = SubResource("ConvexPolygonShape3D_ugo6b")
 shape = SubResource("ConvexPolygonShape3D_avsmw")
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("4_obhin")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14.113964, 2.4970891, -12.199507)
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -14.113964, 2.4970891, -12.199507)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2025295628]
 transform = Transform3D(-0.77971816, 0, 0.62613076, 0, 1, 0, -0.62613076, 0, -0.77971816, 6.8316674, 6.4180894, -6.541145)

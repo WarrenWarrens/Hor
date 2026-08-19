@@ -7,6 +7,27 @@ var turn_strength: float = 0
 var walk_strength: float = 0
 
 @onready var sprite = $AnimatedSprite3D 
+@onready var head = $Head
+@onready var fp_camera = $Head/Camera3D
+
+var is_in_first_person: bool = false
+var previous_camera: Camera3D = null # Remembers your fixed camera
+
+const MOUSE_SENSITIVITY: float = 0.003
+const MAX_YAW: float = deg_to_rad(60)   # Max left/right turn (60 degrees)
+const MAX_PITCH: float = deg_to_rad(45) # Max up/down tilt (45 degrees)
+
+var current_yaw: float = 0.0
+var current_pitch: float = 0.0
+
+func _process(_delta):
+	var wants_first_person = Input.is_action_pressed("sprint")
+
+	if wants_first_person and not is_in_first_person:
+		enter_first_person()
+	elif not wants_first_person and is_in_first_person:
+		exit_first_person()
+		
 
 func _physics_process(delta):
 	var right = Input.get_action_strength("right")
@@ -17,6 +38,11 @@ func _physics_process(delta):
 	var raw_turn = right - left
 	var raw_walk = forward - back
 	
+	if is_in_first_person:
+		velocity = Vector3.ZERO
+		velocity.y -= delta * 20 # Keep gravity active
+		move_and_slide()
+		return # Skip the rest of the movement code
 	# Prioritize walking over turning
 	if abs(raw_walk) > 0:
 		walk_strength = raw_walk * WALK_SPEED
@@ -78,7 +104,46 @@ func update_sprite_direction():
 		-2: sprite.play("Left")
 		-1: sprite.play("FrontLeft")
 
+func enter_first_person():
+	is_in_first_person = true
 
+	# Save the current fixed camera before switching
+	previous_camera = get_viewport().get_camera_3d()
+	fp_camera.make_current()
+
+	# Lock and hide the mouse to the center of the screen
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	# Reset head rotation each time we enter the mode
+	current_yaw = 0.0
+	current_pitch = 0.0
+	head.rotation.y = 0.0
+	fp_camera.rotation.x = 0.0
+
+func exit_first_person():
+	is_in_first_person = false
+
+	# Switch back to the room's fixed camera
+	if previous_camera:
+		previous_camera.make_current()
+		
+	# Free the mouse cursor
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+func _unhandled_input(event):
+	if is_in_first_person and event is InputEventMouseMotion:
+		# Subtract the relative mouse movement to our current angles
+		current_yaw -= event.relative.x * MOUSE_SENSITIVITY
+		current_pitch -= event.relative.y * MOUSE_SENSITIVITY
+
+		# Clamp the angles so the player can't turn their head too far
+		current_yaw = clamp(current_yaw, -MAX_YAW, MAX_YAW)
+		current_pitch = clamp(current_pitch, -MAX_PITCH, MAX_PITCH)
+
+		# Apply the clamped rotations
+		head.rotation.y = current_yaw
+		fp_camera.rotation.x = current_pitch
+	
 #extends CharacterBody3D
 #
 #var turn_strength: float = 0
