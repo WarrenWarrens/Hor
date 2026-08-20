@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://27fxim8l7mnu"
+path="res://.godot/imported/hortest.5.map-ffef6fcdbd892d4b6a33e23b447ab178.tres"
+
+[deps]
+
+source_file="res://Levels/MAP/autosave/hortest.5.map"
+dest_files=["res://.godot/imported/hortest.5.map-ffef6fcdbd892d4b6a33e23b447ab178.tres"]
+
+[params]
+
