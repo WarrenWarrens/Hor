@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://3ae7q5dwop0p" path="res://textures/sky1.png" id="13_1c2o6"]
 [ext_resource type="Texture2D" uid="uid://dpbqw2lk7wqs0" path="res://textures/planks5.png" id="14_h348y"]
 [ext_resource type="PackedScene" uid="uid://lb88dgwww5ba" path="res://Scenes/Enemy.tscn" id="18_oekvh"]
+[ext_resource type="Script" uid="uid://nv642jiu0vxm" path="res://Levels/Pan.gd" id="19_7si22"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_783yi"]
 albedo_texture = ExtResource("3_a2dtv")
@@ -349,9 +350,6 @@ size = Vector3(16.304688, 19.186401, 14.955139)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ek3ai"]
 size = Vector3(8.53537, 13.908081, 21.494812)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0wl8q"]
-size = Vector3(77.09569, 20.790161, 72.04791)
-
 [sub_resource type="Environment" id="Environment_a2dtv"]
 fog_enabled = true
 fog_mode = 1
@@ -361,6 +359,16 @@ fog_density = 1.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 volumetric_fog_emission = Color(0.021434637, 0.021434635, 0.021434633, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2ast"]
+size = Vector3(101.29495, 14.856445, 72.534134)
+
+[sub_resource type="Curve3D" id="Curve3D_oekvh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.1611915, 15.278199, 11.820497, 0, 0, 0, 0, 0, 0, -3.58527, 18.1628, 84.5),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="Node3D" type="Node3D" unique_id=1827959902]
 
@@ -542,13 +550,6 @@ script = ExtResource("5_2oyfs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.264156, 6.4540405, -26.006365)
 shape = SubResource("BoxShape3D_ek3ai")
 
-[node name="Area3D9" type="Area3D" parent="." unique_id=635871407]
-script = ExtResource("5_2oyfs")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D9" unique_id=1349886863]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2689743, 9.895081, 46.66582)
-shape = SubResource("BoxShape3D_0wl8q")
-
 [node name="Camera3D3" type="Camera3D" parent="." unique_id=1596551318]
 transform = Transform3D(-0.17364821, -0.63302225, 0.7544066, 0, 0.7660445, 0.64278764, -0.9848078, 0.11161891, -0.13302225, 39.693756, 12.104646, -28.032118)
 
@@ -561,3 +562,25 @@ environment = SubResource("Environment_a2dtv")
 [node name="Enemy" parent="." unique_id=1331686901 instance=ExtResource("18_oekvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.398987, 3.150969, -29.417088)
 enemy_id = "kitchen_monster_1"
+
+[node name="Pan" type="Area3D" parent="." unique_id=913326273 node_paths=PackedStringArray("target_camera", "camera_path", "path_follow")]
+script = ExtResource("19_7si22")
+target_camera = NodePath("Path3D/PathFollow3D/Camera3D")
+camera_path = NodePath("Path3D")
+path_follow = NodePath("Path3D/PathFollow3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pan" unique_id=178715640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.009689, 6.9282227, 46.831047)
+shape = SubResource("BoxShape3D_v2ast")
+
+[node name="Path3D" type="Path3D" parent="Pan" unique_id=1094127103]
+curve = SubResource("Curve3D_oekvh")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Pan/Path3D" unique_id=326831951]
+transform = Transform3D(-0.99283653, 0.004704491, 0.11938809, 0, 0.99922454, -0.039374467, -0.119480744, -0.03909241, -0.9920666, 5.1611915, 15.278199, 11.820497)
+
+[node name="Camera3D" type="Camera3D" parent="Pan/Path3D/PathFollow3D" unique_id=167930781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 6)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
