@@ -143,7 +143,16 @@ func _unhandled_input(event):
 		# Apply the clamped rotations
 		head.rotation.y = current_yaw
 		fp_camera.rotation.x = current_pitch
-	
+
+func _ready():
+	# Check if we just finished a battle
+	if GameManager.is_returning_from_battle:
+		# Teleport to the saved position and rotation
+		global_position = GameManager.player_position
+		rotation.y = GameManager.player_rotation_y
+
+		# Reset the flag so we don't teleport accidentally later
+		GameManager.is_returning_from_battle = false
 #extends CharacterBody3D
 #
 #var turn_strength: float = 0

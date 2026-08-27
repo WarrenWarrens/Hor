@@ -3,10 +3,7 @@
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_bw2mo"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_7sew2"]
 [ext_resource type="Material" uid="uid://b4jm5ynysetgu" path="res://textures/texture_07.tres" id="3_j75r3"]
-[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://Scenes/Player.tscn" id="13_kih24"]
-[ext_resource type="PackedScene" uid="uid://b118ljdbmw62g" path="res://Scenes/MeleeEnemy.tscn" id="15_epros"]
-[ext_resource type="PackedScene" uid="uid://b34hpscvp0ncg" path="res://Scenes/Pickup.tscn" id="16_dcci8"]
-[ext_resource type="PackedScene" uid="uid://ds0nxrux5xtxg" path="res://Scenes/Door.tscn" id="17_ev0a0"]
+[ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Scenes/Player.tscn" id="13_kih24"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_36cx5"]
 _surfaces = [{
@@ -26,16 +23,15 @@ _surfaces = [{
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u0xwa"]
 points = PackedVector3Array(108.5, 0.5, 135, 108.5, -0.5, 135, -102.5, 0.5, 135, -102.5, -0.5, 135, 108.5, 0.5, -95, 108.5, -0.5, -95, -102.5, 0.5, -95, -102.5, -0.5, -95)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7a8fh"]
-
-[sub_resource type="Sky" id="Sky_vyp0t"]
-sky_material = SubResource("ProceduralSkyMaterial_7a8fh")
-
-[sub_resource type="Environment" id="Environment_ttpud"]
-background_mode = 2
-sky = SubResource("Sky_vyp0t")
-ambient_light_source = 3
-ambient_light_color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+[sub_resource type="Environment" id="Environment_fuqwg"]
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.6913043, 0.7191676, 0.76098937, 1)
+fog_light_energy = 10.86
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_emission = Color(0.021434637, 0.021434635, 0.021434633, 1)
 
 [node name="TestLevelTwo" type="Node3D" unique_id=2038518312]
 
@@ -63,19 +59,5 @@ collision_mask = 3
 transform = Transform3D(-0.8407871, 0.541366, 0, -0.541366, -0.8407871, 0, 0, 0, 1, -62.59576, 86.01305, 0)
 light_energy = 3.337
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=812005426]
-environment = SubResource("Environment_ttpud")
-
-[node name="MeleeEnemy" parent="." unique_id=2078049976 instance=ExtResource("15_epros")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.128456, 13.992893, -39.27126)
-attack_range = 3.0
-detection_range = 30.0
-max_health = 20
-
-[node name="Pickup" parent="." unique_id=481539359 instance=ExtResource("16_dcci8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.959564, -29.204746)
-type = 0
-amount = 20
-
-[node name="Door" parent="." unique_id=1817243544 instance=ExtResource("17_ev0a0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5220165, -53.85357)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=6865570]
+environment = SubResource("Environment_fuqwg")

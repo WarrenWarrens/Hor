@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://deegfjrl66jm2"]
+
+[ext_resource type="Script" uid="uid://rwom0jdm87w0" path="res://Scripts/SceneTransition.gd" id="1_rryme"]
+
+[sub_resource type="Animation" id="Animation_thta4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rryme"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tu0iv"]
+_data = {
+&"RESET": SubResource("Animation_thta4"),
+&"fade_to_black": SubResource("Animation_rryme")
+}
+
+[node name="SceneTransition" type="CanvasLayer" unique_id=1661780200]
+layer = 100
+script = ExtResource("1_rryme")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1962827913]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -127.0
+offset_right = 159.5
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=901441970]
+libraries/ = SubResource("AnimationLibrary_tu0iv")

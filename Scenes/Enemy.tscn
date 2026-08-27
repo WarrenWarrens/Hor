@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://lb88dgwww5ba"]
+
+[ext_resource type="Script" uid="uid://bb16mtdu8s5le" path="res://Scripts/Enemy.gd" id="1_wovta"]
+[ext_resource type="Texture2D" uid="uid://cgmjn42k72mqh" path="res://Assets/demon.png" id="2_xeo28"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s7bn3"]
+radius = 9.152
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ttpud"]
+size = Vector3(1, 1, 1.7567749)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ttpud"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1331686901]
+script = ExtResource("1_wovta")
+
+[node name="DetectionZone" type="Area3D" parent="." unique_id=2974990]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionZone" unique_id=1732614166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1809082, 0)
+shape = SubResource("SphereShape3D_s7bn3")
+
+[node name="AttackZone" type="Area3D" parent="." unique_id=1175277277]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackZone" unique_id=2101728129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.024810791)
+shape = SubResource("BoxShape3D_ttpud")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=476916190]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+texture = ExtResource("2_xeo28")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1783425114]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_ttpud")
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_entered" from="AttackZone" to="." method="_on_attack_zone_body_entered"]

@@ -4,9 +4,9 @@
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_obhin"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="3_2oyfs"]
 [ext_resource type="Texture2D" uid="uid://butkdt2noar0t" path="res://textures/grass2.png" id="3_a2dtv"]
-[ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Levels/Player.tscn" id="4_obhin"]
+[ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Scenes/Player.tscn" id="4_obhin"]
 [ext_resource type="Material" uid="uid://h8ev86nq1mpm" path="res://textures/bf205c89ad779da0946fc7251afffe86-dithered.tres" id="4_oekvh"]
-[ext_resource type="Script" uid="uid://c8ur6ydfji6oa" path="res://Levels/Area.gd" id="5_2oyfs"]
+[ext_resource type="Script" uid="uid://c8ur6ydfji6oa" path="res://Scripts/Area.gd" id="5_2oyfs"]
 [ext_resource type="Texture2D" uid="uid://4jpy32b2kqvp" path="res://textures/concrete1.png" id="5_7si22"]
 [ext_resource type="Texture2D" uid="uid://8ev0so7mqheq" path="res://textures/rocks2.png" id="6_w0l5p"]
 [ext_resource type="Texture2D" uid="uid://ddqy71quecuks" path="res://textures/fence1_a.png" id="7_ji2lk"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dc3oa7w8ud6jt" path="res://textures/vent.png" id="12_p57c1"]
 [ext_resource type="Texture2D" uid="uid://3ae7q5dwop0p" path="res://textures/sky1.png" id="13_1c2o6"]
 [ext_resource type="Texture2D" uid="uid://dpbqw2lk7wqs0" path="res://textures/planks5.png" id="14_h348y"]
+[ext_resource type="PackedScene" uid="uid://lb88dgwww5ba" path="res://Scenes/Enemy.tscn" id="18_oekvh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_783yi"]
 albedo_texture = ExtResource("3_a2dtv")
@@ -333,16 +334,6 @@ points = PackedVector3Array(-12, 4.5, -5, -12, 0.5, -5, -13, 4.5, -5, -13, 0.5, 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ttpud"]
 size = Vector3(43.249573, 20.346664, 25.715347)
 
-[sub_resource type="Environment" id="Environment_ttpud"]
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.6913043, 0.7191676, 0.76098937, 1)
-fog_light_energy = 10.86
-fog_density = 1.0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
-volumetric_fog_emission = Color(0.021434637, 0.021434635, 0.021434633, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_vyp0t"]
 size = Vector3(18.220173, 13.162964, 21.375282)
 
@@ -360,6 +351,16 @@ size = Vector3(8.53537, 13.908081, 21.494812)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0wl8q"]
 size = Vector3(77.09569, 20.790161, 72.04791)
+
+[sub_resource type="Environment" id="Environment_a2dtv"]
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.6913043, 0.7191676, 0.76098937, 1)
+fog_light_energy = 10.86
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_emission = Color(0.021434637, 0.021434635, 0.021434633, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1827959902]
 
@@ -469,7 +470,7 @@ shape = SubResource("ConvexPolygonShape3D_xg8gq")
 shape = SubResource("ConvexPolygonShape3D_8f1nm")
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("4_obhin")]
-transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -14.113964, 2.4970891, -12.199507)
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 27.607538, 2.4970891, -18.665335)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2025295628]
 transform = Transform3D(0.560639, -0.47495592, 0.6783073, 0, 0.81915206, 0.57357645, -0.8280603, -0.32156935, 0.4592486, 40.35506, 12.721773, -3.5949035)
@@ -494,9 +495,6 @@ target_camera = NodePath("../Camera3D2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=641872071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5383997, 1.3939283, 0)
 shape = SubResource("BoxShape3D_ttpud")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=311291876]
-environment = SubResource("Environment_ttpud")
 
 [node name="Area3D3" type="Area3D" parent="." unique_id=960760635 node_paths=PackedStringArray("target_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.051405, 2.732898, -19.471146)
@@ -556,3 +554,10 @@ transform = Transform3D(-0.17364821, -0.63302225, 0.7544066, 0, 0.7660445, 0.642
 
 [node name="Camera3D4" type="Camera3D" parent="." unique_id=157825833]
 transform = Transform3D(0.64278764, -0.58682406, 0.4924039, 0, 0.64278764, 0.76604444, -0.76604444, -0.4924039, 0.41317594, 10.656366, 11.98161, -15.68402)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1445265220]
+environment = SubResource("Environment_a2dtv")
+
+[node name="Enemy" parent="." unique_id=1331686901 instance=ExtResource("18_oekvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.398987, 3.150969, -29.417088)
+enemy_id = "kitchen_monster_1"
