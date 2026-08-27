@@ -331,7 +331,7 @@ points = PackedVector3Array(33.5, 7, -14, 33.5, 0.5, -14, 33, 7, -14, 33, 0.5, -
 points = PackedVector3Array(-12, 4.5, -5, -12, 0.5, -5, -13, 4.5, -5, -13, 0.5, -5, -12, 4.5, -5.5, -12, 0.5, -5.5, -13, 4.5, -5.5, -13, 0.5, -5.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ttpud"]
-size = Vector3(43.936768, 20.346664, 26.445343)
+size = Vector3(43.249573, 20.346664, 25.715347)
 
 [sub_resource type="Environment" id="Environment_ttpud"]
 fog_enabled = true
@@ -344,7 +344,7 @@ volumetric_fog_density = 0.03
 volumetric_fog_emission = Color(0.021434637, 0.021434635, 0.021434633, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vyp0t"]
-size = Vector3(18.220173, 13.162964, 15.048416)
+size = Vector3(18.220173, 13.162964, 21.375282)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tgb25"]
 size = Vector3(42.98459, 15.362244, 7.8789063)
@@ -472,7 +472,7 @@ shape = SubResource("ConvexPolygonShape3D_8f1nm")
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -14.113964, 2.4970891, -12.199507)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2025295628]
-transform = Transform3D(-0.77971816, 0, 0.62613076, 0, 1, 0, -0.62613076, 0, -0.77971816, 37.40965, 10.319082, -11.532273)
+transform = Transform3D(0.560639, -0.47495592, 0.6783073, 0, 0.81915206, 0.57357645, -0.8280603, -0.32156935, 0.4592486, 40.35506, 12.721773, -3.5949035)
 
 [node name="Camera3D2" type="Camera3D" parent="." unique_id=918720075]
 transform = Transform3D(-0.7071068, 0.45451942, -0.5416752, 0, 0.7660445, 0.64278764, 0.7071067, 0.45451954, -0.5416753, -38.509888, 14.180103, -13.593252)
@@ -483,7 +483,7 @@ script = ExtResource("5_2oyfs")
 target_camera = NodePath("../Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1211810006]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.252674, 2.4856718, -0.8824849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.912891, 2.4856718, -0.8824849)
 shape = SubResource("BoxShape3D_ttpud")
 
 [node name="Area3D2" type="Area3D" parent="." unique_id=1422714470 node_paths=PackedStringArray("target_camera")]
@@ -492,7 +492,7 @@ script = ExtResource("5_2oyfs")
 target_camera = NodePath("../Camera3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=641872071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8550196, 1.3939283, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5383997, 1.3939283, 0)
 shape = SubResource("BoxShape3D_ttpud")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=311291876]
@@ -504,15 +504,16 @@ script = ExtResource("5_2oyfs")
 target_camera = NodePath("../Camera3D3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3" unique_id=2053563746]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3092442, 0, -7.349579)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3092442, 0, -7.7145767)
 shape = SubResource("BoxShape3D_ttpud")
 
-[node name="Area3D4" type="Area3D" parent="." unique_id=889995418]
+[node name="Area3D4" type="Area3D" parent="." unique_id=889995418 node_paths=PackedStringArray("target_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1203089, -23.118855)
 script = ExtResource("5_2oyfs")
+target_camera = NodePath("../Camera3D4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4" unique_id=732005921]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.471319, -1.1611328, 1.1783638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.471319, -1.1611328, -1.9850693)
 shape = SubResource("BoxShape3D_vyp0t")
 
 [node name="Area3D5" type="Area3D" parent="." unique_id=1523316275]
@@ -552,3 +553,6 @@ shape = SubResource("BoxShape3D_0wl8q")
 
 [node name="Camera3D3" type="Camera3D" parent="." unique_id=1596551318]
 transform = Transform3D(-0.17364821, -0.63302225, 0.7544066, 0, 0.7660445, 0.64278764, -0.9848078, 0.11161891, -0.13302225, 39.693756, 12.104646, -28.032118)
+
+[node name="Camera3D4" type="Camera3D" parent="." unique_id=157825833]
+transform = Transform3D(0.64278764, -0.58682406, 0.4924039, 0, 0.64278764, 0.76604444, -0.76604444, -0.4924039, 0.41317594, 10.656366, 11.98161, -15.68402)
