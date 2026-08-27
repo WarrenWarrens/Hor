@@ -28,6 +28,8 @@ shape = SubResource("BoxShape3D_ttpud")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=476916190]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+billboard = 2
+texture_filter = 0
 texture = ExtResource("2_xeo28")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1783425114]
