@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://rionh754n0l5" path="res://InventoryMenu.gd" id="1_h02av"]
 
+[sub_resource type="Gradient" id="Gradient_h02av"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h02av"]
+gradient = SubResource("Gradient_h02av")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
 [node name="InventoryMenu" type="CanvasLayer" unique_id=2039048301]
 process_mode = 3
 layer = 90
@@ -9,7 +18,7 @@ script = ExtResource("1_h02av")
 
 [node name="Background" type="ColorRect" parent="." unique_id=355317776]
 offset_right = 321.0
-offset_bottom = 239.0
+offset_bottom = 243.0
 color = Color(0, 0, 0, 1)
 
 [node name="MainSplit" type="HBoxContainer" parent="." unique_id=1348290678]
@@ -25,15 +34,19 @@ layout_mode = 2
 
 [node name="ItemsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1554579395]
 layout_mode = 2
+text = "Items"
 
 [node name="WeaponsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1801357880]
 layout_mode = 2
+text = "Weapons"
 
 [node name="ToolsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1709745653]
 layout_mode = 2
+text = "Tools"
 
 [node name="OptionsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1518031969]
 layout_mode = 2
+text = "Options"
 
 [node name="RightMenu" type="VBoxContainer" parent="MainSplit" unique_id=1449355974]
 layout_mode = 2
@@ -62,9 +75,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="StatusImage" type="TextureRect" parent="MainSplit/RightMenu/RightLowerMenu" unique_id=1432592652]
+custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="HealthOverlay" type="TextureRect" parent="MainSplit/RightMenu/RightLowerMenu/StatusImage" unique_id=52404764]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 100.0
+offset_bottom = 87.0
+pivot_offset = Vector2(25, 25)
+texture = SubResource("GradientTexture2D_h02av")
+expand_mode = 1
 
 [connection signal="pressed" from="MainSplit/LeftMenu/ItemsBtn" to="." method="_on_items_btn_pressed"]
 [connection signal="pressed" from="MainSplit/LeftMenu/WeaponsBtn" to="." method="_on_weapons_btn_pressed"]
