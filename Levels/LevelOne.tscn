@@ -355,10 +355,9 @@ size = Vector3(8.53537, 13.908081, 21.494812)
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.6913043, 0.7191676, 0.76098937, 1)
-fog_light_energy = 10.86
+fog_light_energy = 20.0
 fog_density = 1.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
 volumetric_fog_emission = Color(0.021434637, 0.021434635, 0.021434633, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v2ast"]
@@ -585,6 +584,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 6)
 
 [node name="Item" parent="." unique_id=2023826472 instance=ExtResource("20_w0l5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749779, 3.3257585, 0)
+item_name = "Pistol Ammo"
+
+[node name="Item2" parent="." unique_id=376254814 instance=ExtResource("20_w0l5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749779, 3.3257585, 10.008287)
+item_amount = 1
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

@@ -80,8 +80,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PrismMesh" id="PrismMesh_ttpud"]
-
 [sub_resource type="Gradient" id="Gradient_yoq75"]
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
 
@@ -120,10 +118,6 @@ billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ttpud")
 animation = &"Right"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1889382618]
-transform = Transform3D(0.1, 0, 0, 0, -0.1, -8.742278e-08, 0, 8.742278e-09, -1, 0, 0, -1)
-mesh = SubResource("PrismMesh_ttpud")
 
 [node name="Head" type="Node3D" parent="." unique_id=521517563]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)

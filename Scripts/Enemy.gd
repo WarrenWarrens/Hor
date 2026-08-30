@@ -50,6 +50,7 @@ func _on_attack_zone_body_entered(body):
 
 func start_battle():
 	# 1. Save the player's exact state
+	PlayerStats.change_health(-50)
 	GameManager.last_room_path = get_tree().current_scene.scene_file_path
 	GameManager.player_position = player.global_position
 	GameManager.player_rotation_y = player.rotation.y

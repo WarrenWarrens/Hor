@@ -5,8 +5,6 @@ extends CanvasLayer
 @onready var status_image = $MainSplit/RightMenu/RightLowerMenu/StatusImage
 @onready var health_overlay = $MainSplit/RightMenu/RightLowerMenu/StatusImage/HealthOverlay
 
-var current_health: int = 100
-
 func _ready():
 	hide()
 	item_rect.hide()
@@ -39,9 +37,11 @@ func close_inventory():
 	weapon_rect.hide()
 	
 func update_health_colour():
+	var current_health = int(PlayerStats.get_health())
+	
 	if current_health > 70:
 		health_overlay.modulate = Color(0.2,0.8,0.2,0.6)
-	elif current_health > 30:
+	elif current_health > 50:
 		health_overlay.modulate = Color(0.8,0.8,0.2,0.6)
 	else:
 		health_overlay.modulate = Color(0.8,0.2,0.2,0.6)
