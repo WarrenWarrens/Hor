@@ -8,7 +8,6 @@ var player: Node3D = null
 var is_active: bool = false
 
 func _ready():
-	# Only connect via code if the Godot Editor hasn't already connected them
 	if not body_entered.is_connected(_on_body_entered):
 		body_entered.connect(_on_body_entered)
 	if not body_exited.is_connected(_on_body_exited):
@@ -24,7 +23,6 @@ func _on_body_entered(body):
 		_activate_camera(body)
 
 func _activate_camera(body):
-	# Safety check: Don't crash if we forgot to assign the camera in the inspector
 	if target_camera:
 		player = body
 		is_active = true
@@ -39,12 +37,10 @@ func _on_body_exited(body):
 		call_deferred("_check_fallback", body)
 
 func _check_fallback(body):
-	# If this specific camera is still active, it means no new zone took over
 	if target_camera and target_camera.current:
 		body.fp_camera.make_current()
 
 func _process(delta):
-	# Only pan if all nodes are properly assigned and the player is in the zone
 	if is_active and player and camera_path and path_follow and target_camera:
 		var local_pos = camera_path.to_local(player.global_position)
 		var closest_offset = camera_path.curve.get_closest_offset(local_pos)
