@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c26jtl8jnrar0"]
+
+[ext_resource type="Script" uid="uid://rionh754n0l5" path="res://InventoryMenu.gd" id="1_h02av"]
+
+[node name="InventoryMenu" type="CanvasLayer" unique_id=2039048301]
+process_mode = 3
+layer = 90
+script = ExtResource("1_h02av")
+
+[node name="Background" type="ColorRect" parent="." unique_id=355317776]
+offset_right = 321.0
+offset_bottom = 239.0
+color = Color(0, 0, 0, 1)
+
+[node name="MainSplit" type="HBoxContainer" parent="." unique_id=1348290678]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftMenu" type="VBoxContainer" parent="MainSplit" unique_id=84712597]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="ItemsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1554579395]
+layout_mode = 2
+
+[node name="WeaponsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1801357880]
+layout_mode = 2
+
+[node name="ToolsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1709745653]
+layout_mode = 2
+
+[node name="OptionsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1518031969]
+layout_mode = 2
+
+[node name="RightMenu" type="VBoxContainer" parent="MainSplit" unique_id=1449355974]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContentArea" type="MarginContainer" parent="MainSplit/RightMenu" unique_id=2054387690]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemRect" type="ColorRect" parent="MainSplit/RightMenu/ContentArea" unique_id=1416188915]
+visible = false
+layout_mode = 2
+color = Color(0.7700096, 0, 0, 0.9882353)
+
+[node name="WeaponRect" type="ColorRect" parent="MainSplit/RightMenu/ContentArea" unique_id=137905688]
+visible = false
+layout_mode = 2
+color = Color(7.70092e-07, 0.5605932, 0.8936776, 1)
+
+[node name="RightLowerMenu" type="HBoxContainer" parent="MainSplit/RightMenu" unique_id=1217935342]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MainSplit/RightMenu/RightLowerMenu" unique_id=1265857009]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatusImage" type="TextureRect" parent="MainSplit/RightMenu/RightLowerMenu" unique_id=1432592652]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="MainSplit/LeftMenu/ItemsBtn" to="." method="_on_items_btn_pressed"]
+[connection signal="pressed" from="MainSplit/LeftMenu/WeaponsBtn" to="." method="_on_weapons_btn_pressed"]
+[connection signal="pressed" from="MainSplit/LeftMenu/ToolsBtn" to="." method="_on_tools_btn_pressed"]
+[connection signal="pressed" from="MainSplit/LeftMenu/OptionsBtn" to="." method="_on_options_btn_pressed"]
