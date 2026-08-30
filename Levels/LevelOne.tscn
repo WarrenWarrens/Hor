@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dpbqw2lk7wqs0" path="res://textures/planks5.png" id="14_h348y"]
 [ext_resource type="PackedScene" uid="uid://lb88dgwww5ba" path="res://Scenes/Enemy.tscn" id="18_oekvh"]
 [ext_resource type="Script" uid="uid://nv642jiu0vxm" path="res://Levels/Pan.gd" id="19_7si22"]
+[ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/ItemPickup.tscn" id="20_w0l5p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_783yi"]
 albedo_texture = ExtResource("3_a2dtv")
@@ -581,6 +582,9 @@ transform = Transform3D(-0.99283653, 0.004704491, 0.11938809, 0, 0.99922454, -0.
 
 [node name="Camera3D" type="Camera3D" parent="Pan/Path3D/PathFollow3D" unique_id=167930781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 6)
+
+[node name="Item" parent="." unique_id=2023826472 instance=ExtResource("20_w0l5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749779, 3.3257585, 0)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

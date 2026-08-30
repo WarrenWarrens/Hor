@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 GameManager="*uid://bvhx3abnw6wex"
 SceneTransition="*uid://deegfjrl66jm2"
 InventoryMenu="*uid://c26jtl8jnrar0"
+PlayerInventory="*uid://ug6pxju0vehy"
+PlayerStats="*uid://dk3h3gn3hs52p"
 
 [display]
 
@@ -98,6 +100,11 @@ weapon_4={
 pause={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+]
+}
+flashlight={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
 ]
 }
 

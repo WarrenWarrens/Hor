@@ -9,6 +9,11 @@ var walk_strength: float = 0
 @onready var sprite = $AnimatedSprite3D 
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
+@onready var indicator = $Head/Indicator
+@onready var prompt_label = $HUD/PromptLabel
+@onready var message_label = $HUD/MessageLabel
+@onready var message_timer = $HUD/MessageTimer
+@onready var flashlight = $Head/Camera3D/Flashlight
 
 var is_in_first_person: bool = false
 var previous_camera: Camera3D = null 
@@ -117,6 +122,8 @@ func exit_first_person():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func _unhandled_input(event):
+	if event.is_action_pressed("flashlight"):
+		flashlight.visible = not flashlight.visible
 	if is_in_first_person and event is InputEventMouseMotion:
 		current_yaw -= event.relative.x * MOUSE_SENSITIVITY
 		current_pitch -= event.relative.y * MOUSE_SENSITIVITY
@@ -126,9 +133,33 @@ func _unhandled_input(event):
 
 		head.rotation.y = current_yaw
 		fp_camera.rotation.x = current_pitch
+	
 
 func _ready():
+	message_timer.timeout.connect(_on_message_timeout)
 	if GameManager.is_returning_from_battle:
 		global_position = GameManager.player_position
 		rotation.y = GameManager.player_rotation_y
 		GameManager.is_returning_from_battle = false
+
+
+func _on_message_timer_timeout() -> void:
+	pass # Replace with function body.
+
+func set_indicator_visible(is_visible: bool):
+	indicator.visible = is_visible
+	
+func show_prompt(text: String):
+	prompt_label.text = text
+	prompt_label.show()
+	
+func hide_prompt():
+	prompt_label.hide()
+	
+func show_pickup_message(text: String):
+	message_label.text = text
+	message_label.show()
+	message_timer.start()
+
+func _on_message_timeout():
+	message_label.hide()
