@@ -3,7 +3,7 @@ enum PickupType { HEALTH, ARMOUR, AMMO, WEAPON, KEYCARD }
 
 @export var type: PickupType = PickupType.WEAPON
 #@export var item_name: String = "shotgun" 
-@export var amount: int = 10
+@export var item_amount: int = 10
 
 @export var item_name: String = "Green Herb"
 var player_in_pickup_zone: CharacterBody3D = null
@@ -21,8 +21,14 @@ func _process(delta: float) -> void:
 func _pickup_item():
 	player_in_pickup_zone.set_indicator_visible(false)
 	player_in_pickup_zone.hide_prompt()
-	player_in_pickup_zone.show_pickup_message("Aquired: " + item_name)
 	
+	var item_text = item_name
+	if item_amount > 1:
+		item_text = str(item_amount) + " x " + item_name
+	
+	var final_message = "Aquired: [color=darkblue]" + item_text + "[/color]"
+	
+	player_in_pickup_zone.show_pickup_message(final_message)
 	queue_free()
 
 func _on_detect_zone_body_entered(body):

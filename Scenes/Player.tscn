@@ -157,36 +157,42 @@ shape = SubResource("SphereShape3D_ttpud")
 
 [node name="PromptLabel" type="Label" parent="HUD" unique_id=1761052647]
 visible = false
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchor_bottom = 1.0
+offset_left = -9.5
+offset_top = -40.0
+offset_right = 9.5
+offset_bottom = -17.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 8
-
-[node name="MessageLabel" type="Label" parent="HUD" unique_id=556216944]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
 
 [node name="MessageTimer" type="Timer" parent="HUD" unique_id=134381689]
 wait_time = 2.0
 one_shot = true
+
+[node name="MessageLabel" type="RichTextLabel" parent="HUD" unique_id=418913798]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
 
 [connection signal="timeout" from="HUD/MessageTimer" to="." method="_on_message_timer_timeout"]

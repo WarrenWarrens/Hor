@@ -119,6 +119,11 @@ func exit_first_person():
 	if previous_camera:
 		previous_camera.make_current()
 		
+	head.rotation = Vector3.ZERO
+	fp_camera.rotation = Vector3.ZERO
+	current_yaw = 0.0
+	current_pitch = 0.0
+		
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func _unhandled_input(event):
