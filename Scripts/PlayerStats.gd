@@ -1,11 +1,32 @@
 extends Node
 
+var health = 90
+var max_health = 100
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var action = true
 
+func reset():
+	health = 100
+	action = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func game_over():
+	reset()
+	get_tree().reload_crrent_scene()
+	
+func take_damage(amount: int):
+	change_health(-amount)
+	if health <= 0: 
+		game_over()
+	
+func change_health(amount: int):
+	health = clamp(health + amount, 0, max_health)
+	
+func change_action(value: int):
+	action = (value == 1)
+	
+func get_health() -> String:
+	return str(health)
+	
+func get_action() ->String:
+	return str(action)
+	
