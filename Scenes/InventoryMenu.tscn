@@ -122,7 +122,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "t"
 
-[node name="Desclabel" type="Label" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox/HeaderVBox" unique_id=355019396]
+[node name="DescLabel" type="Label" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox/HeaderVBox" unique_id=355019396]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "t"
