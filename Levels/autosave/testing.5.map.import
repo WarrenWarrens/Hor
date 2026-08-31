@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://ba11yevk8af5m"
+path="res://.godot/imported/testing.5.map-94b4a5ba09191912a1072ce4e9b76bbf.tres"
+
+[deps]
+
+source_file="res://Levels/autosave/testing.5.map"
+dest_files=["res://.godot/imported/testing.5.map-94b4a5ba09191912a1072ce4e9b76bbf.tres"]
+
+[params]
+
