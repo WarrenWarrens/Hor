@@ -110,7 +110,7 @@ func build_weapon_list():
 		child.queue_free()
 	
 	for item in PlayerInventory.items:
-		if item["type"] == "weapon" or item["type"] =="ammo":
+		if (item["type"] == "weapon" or item["type"] == "ammo") and item["quantity"] > 0:
 			var slot = item_slot_scene.instantiate()
 			weapon_list.add_child(slot)
 			
@@ -176,7 +176,7 @@ func build_supplies_list():
 		child.queue_free()
 	
 	for item in PlayerInventory.items:
-		if item["type"] == "heal" or item["type"] =="key":
+		if (item["type"] == "heal" or item["type"] =="key") and item["quantity"] > 0:
 			var slot = item_slot_scene.instantiate()
 			supplies_list.add_child(slot)
 			

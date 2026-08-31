@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c60758tjxw02u"]
 
 [ext_resource type="Script" uid="uid://gclbihgeg4w6" path="res://Scenes/ItemPickup.gd" id="1_hmchh"]
-[ext_resource type="Texture2D" uid="uid://bf58ybg22gcji" path="res://Assets/Blast1.png" id="1_wv3i5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h02av"]
 radius = 2.0
@@ -16,7 +15,6 @@ script = ExtResource("1_hmchh")
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 billboard = 2
 texture_filter = 0
-texture = ExtResource("1_wv3i5")
 
 [node name="PickupZone" type="Area3D" parent="." unique_id=1625596736]
 

@@ -1,5 +1,7 @@
 extends Node
 # Mock database of what the player is currently carrying
+
+
 var items = [
 	{
 		"id": "handgun",
@@ -36,7 +38,7 @@ var items = [
 		"name": "Shotgun Ammo",
 		"description": "12 Gauge buckshot, used for hunting",
 		"type": "weapon",
-		"quantity": 5,
+		"quantity": 0,
 		"icon": "res://Assets/ShotgunAmmo.png", 
 		"actions": ["Examine", "Combine", "Drop"]
 	},
@@ -91,3 +93,10 @@ var items = [
 		"actions": ["Examine", "Combine", "Drop"]
 	}
 ]
+
+func add_item(target_id: String, amount: int):
+	for item in items:
+		if item["id"] == target_id:
+			item["quantity"] += amount
+			return 
+	print("ERROR: Item ID " + target_id + " not found in database")

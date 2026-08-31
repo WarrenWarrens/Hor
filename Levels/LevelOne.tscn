@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://lb88dgwww5ba" path="res://Scenes/Enemy.tscn" id="18_oekvh"]
 [ext_resource type="Script" uid="uid://nv642jiu0vxm" path="res://Levels/Pan.gd" id="19_7si22"]
 [ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/ItemPickup.tscn" id="20_w0l5p"]
+[ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="21_ji2lk"]
+[ext_resource type="Texture2D" uid="uid://c5ejwhro0ctrh" path="res://Assets/PistolAmmo.png" id="22_g6e0d"]
+[ext_resource type="Texture2D" uid="uid://bvvk6t1rwrcvj" path="res://Assets/ShotgunAmmo.png" id="22_wrem4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_783yi"]
 albedo_texture = ExtResource("3_a2dtv")
@@ -584,11 +587,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 6)
 
 [node name="Item" parent="." unique_id=2023826472 instance=ExtResource("20_w0l5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749779, 3.3257585, 0)
-item_name = "Pistol Ammo"
+item_texture = ExtResource("21_ji2lk")
+
+[node name="Item3" parent="." unique_id=1188188603 instance=ExtResource("20_w0l5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.750153, 3.3257585, 0)
+item_id = "shotgun_ammo"
+item_name = "Shotgun Ammo"
+item_amount = 4
+item_texture = ExtResource("22_wrem4")
 
 [node name="Item2" parent="." unique_id=376254814 instance=ExtResource("20_w0l5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749779, 3.3257585, 10.008287)
-item_amount = 1
+item_id = "pistol_ammo"
+item_name = "Pistol Ammo"
+item_amount = 40
+item_texture = ExtResource("22_g6e0d")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
