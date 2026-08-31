@@ -154,6 +154,8 @@ pivot_offset = Vector2(25, 25)
 texture = SubResource("GradientTexture2D_h02av")
 expand_mode = 1
 
+[node name="UISoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1768296306]
+
 [connection signal="pressed" from="MainSplit/LeftMenu/SuppliesBtn" to="." method="_on_supplies_btn_pressed"]
 [connection signal="pressed" from="MainSplit/LeftMenu/WeaponsBtn" to="." method="_on_weapons_btn_pressed"]
 [connection signal="pressed" from="MainSplit/LeftMenu/ToolsBtn" to="." method="_on_tools_btn_pressed"]

@@ -7,6 +7,7 @@ var items = [
 		"description": "A standard 9mm issue. Reliable but low stopping power.",
 		"type": "weapon",
 		"quantity": 1,
+		"icon": "res://Assets/place.png", 
 		"actions": ["Equip", "Examine"]
 	},
 	
@@ -16,6 +17,7 @@ var items = [
 		"description": "A sharp tactical knife. Good for emergencies.",
 		"type": "weapon",
 		"quantity": 1,
+		"icon": "res://Assets/place.png", 
 		"actions": ["Equip", "Examine", "Drop"]
 	},
 	
@@ -25,6 +27,7 @@ var items = [
 		"description": "I hate baseball",
 		"type": "weapon",
 		"quantity": 1,
+		"icon": "res://Assets/place.png", 
 		"actions": ["Equip", "Examine"]
 	},
 	
@@ -34,6 +37,7 @@ var items = [
 		"description": "12 Gauge buckshot, used for hunting",
 		"type": "weapon",
 		"quantity": 5,
+		"icon": "res://Assets/ShotgunAmmo.png", 
 		"actions": ["Examine", "Combine", "Drop"]
 	},
 	
@@ -43,6 +47,7 @@ var items = [
 		"description": "200mg of caffine, runs most blue collar workers",
 		"type": "heal",
 		"quantity": 2,
+		"icon": "res://Assets/EnergyDrink.png", 
 		"actions": ["Use", "Examine", "Drop"]
 	},
 	
@@ -52,6 +57,7 @@ var items = [
 		"description": "A simple biological remedy to pain",
 		"type": "heal",
 		"quantity": 3,
+		"icon": "res://Assets/GreenHerb.png", 
 		"actions": ["Use", "Examine", "Combine", "Drop"]
 	},
 	
@@ -61,6 +67,7 @@ var items = [
 		"description": "Disgusting on its own",
 		"type": "heal",
 		"quantity": 5,
+		"icon": "res://Assets/RedHerb.png", 
 		"actions": ["Use","Examine", "Combine", "Drop"]
 	},
 	
@@ -70,6 +77,7 @@ var items = [
 		"description": "The key to the library, feels heavy",
 		"type": "key",
 		"quantity": 1,
+		"icon": "res://Assets/place.png", 
 		"actions": ["Use", "Examine"]
 	},
 	
@@ -79,6 +87,7 @@ var items = [
 		"description": "Standard 9mm parabellum rounds.",
 		"type": "ammo",
 		"quantity": 21,
+		"icon": "res://Assets/PistolAmmo.png", 
 		"actions": ["Examine", "Combine", "Drop"]
 	}
 ]

@@ -1,5 +1,11 @@
 extends CanvasLayer
 
+
+@onready var weapons_btn = $MainSplit/LeftMenu/WeaponsBtn
+@onready var supplies_btn = $MainSplit/LeftMenu/SuppliesBtn
+@onready var tools_btn = $MainSplit/LeftMenu/ToolsBtn
+@onready var options_btn = $MainSplit/LeftMenu/OptionsBtn
+
 @onready var supplies_rect = $MainSplit/RightMenu/ContentArea/SuppliesRect
 @onready var weapon_rect = $MainSplit/RightMenu/ContentArea/WeaponRect
 @onready var status_image = $MainSplit/RightMenu/RightLowerMenu/StatusImage
@@ -16,6 +22,8 @@ extends CanvasLayer
 @onready var name_label2 = $MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox/HeaderVBox/NameLabel
 @onready var desc_label2 = $MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox/HeaderVBox/DescLabel
 @onready var action_buttons_container2 = $MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/ActionButtons
+
+@onready var ui_sound_player = $UISoundPlayer
 
 var item_slot_scene = preload("res://Scenes/ItemSlot.tscn")
 
@@ -48,6 +56,9 @@ func close_inventory():
 	get_tree().paused = false
 	hide()
 	
+	weapons_btn.remove_theme_color_override("font_color")
+	supplies_btn.remove_theme_color_override("font_color")
+
 	supplies_rect.hide()
 	weapon_rect.hide()
 	
@@ -63,18 +74,36 @@ func update_health_colour():
 			
 
 func _on_weapons_btn_pressed():
-	supplies_rect.hide()
-	supplies_details.hide()
-	weapon_rect.show()
-	weapon_details.hide()
-	build_weapon_list()
+	if weapon_rect.visible:
+		weapon_rect.hide()
+		weapon_details.hide()
+		weapons_btn.remove_theme_color_override("font_color")
+	else:
+		supplies_rect.hide()
+		supplies_details.hide()
+		supplies_btn.remove_theme_color_override("font_color")
+		
+		weapon_rect.show()
+		weapon_details.hide()
+		weapons_btn.add_theme_color_override("font_color", Color(0.8,0.8,0.2))
+		build_weapon_list()
+		
 	
 func _on_supplies_btn_pressed():
-	supplies_rect.show()
-	supplies_details.hide()
-	weapon_rect.hide()
-	weapon_details.hide()
-	build_supplies_list()
+	if supplies_rect.visible:
+		supplies_rect.hide()
+		supplies_details.hide()
+		supplies_btn.remove_theme_color_override("font_color")
+	else:
+		weapon_rect.hide()
+		weapon_details.hide()
+		weapons_btn.remove_theme_color_override("font_color")
+		
+		supplies_rect.show()
+		supplies_details.hide()
+		supplies_btn.add_theme_color_override("font_color", Color(0.8,0.8,0.2))
+		build_supplies_list()
+	
 	
 func build_weapon_list():
 	for child in weapon_list.get_children():
@@ -84,6 +113,10 @@ func build_weapon_list():
 		if item["type"] == "weapon" or item["type"] =="ammo":
 			var slot = item_slot_scene.instantiate()
 			weapon_list.add_child(slot)
+			
+			var icon_node = slot.get_node("TextureRect") 
+			if item.has("icon"):
+				icon_node.texture = load(item["icon"])
 			
 			var qty_label = slot.get_node("Label")
 			if item["quantity"] > 1:
@@ -146,6 +179,10 @@ func build_supplies_list():
 		if item["type"] == "heal" or item["type"] =="key":
 			var slot = item_slot_scene.instantiate()
 			supplies_list.add_child(slot)
+			
+			var icon_node = slot.get_node("TextureRect") 
+			if item.has("icon"):
+				icon_node.texture = load(item["icon"])
 			
 			var qty_label = slot.get_node("Label")
 			if item["quantity"] > 1:

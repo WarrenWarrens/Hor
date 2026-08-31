@@ -8,6 +8,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1415300921]
+texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 15
