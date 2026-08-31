@@ -45,8 +45,6 @@ func _on_detection_zone_body_entered(body):
 func _on_attack_zone_body_entered(body):
 	if body.is_in_group("player") and not in_battle:
 		call_deferred("start_battle")
-		
-	
 
 func start_battle():
 	# 1. Save the player's exact state
