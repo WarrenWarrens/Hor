@@ -1,8 +1,9 @@
 extends Area3D
 
-@export var target_camera: Camera3D
-@export var camera_path: Path3D
-@export var path_follow: PathFollow3D
+
+@onready var target_camera = $Path3D/PathFollow3D/Camera3D
+@onready var camera_path = $Path3D
+@onready var path_follow = $Path3D/PathFollow3D
 
 var player: Node3D = null
 var is_active: bool = false

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bdhy5feqsc4p"]
+
+[ext_resource type="Script" uid="uid://c8ur6ydfji6oa" path="res://Scripts/Area.gd" id="1_fpb8d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ttpud"]
+
+[node name="FixedCameraZone" type="Area3D" unique_id=583036434]
+script = ExtResource("1_fpb8d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=387207090]
+shape = SubResource("BoxShape3D_ttpud")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=680568757]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

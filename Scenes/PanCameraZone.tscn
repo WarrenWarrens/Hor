@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://kcndqg5p7cf"]
+
+[ext_resource type="Script" uid="uid://nv642jiu0vxm" path="res://Levels/Pan.gd" id="1_jcv7a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ttpud"]
+
+[sub_resource type="Curve3D" id="Curve3D_bo6em"]
+
+[node name="PanCameraZone" type="Area3D" unique_id=781733368]
+script = ExtResource("1_jcv7a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=457417298]
+shape = SubResource("BoxShape3D_ttpud")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=158784253]
+curve = SubResource("Curve3D_bo6em")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1586754493]
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=137424710]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
