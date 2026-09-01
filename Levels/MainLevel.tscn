@@ -921,3 +921,13 @@ shape = SubResource("BoxShape3D_vyp0t")
 
 [node name="Camera3D2" type="Camera3D" parent="." unique_id=1987410500]
 transform = Transform3D(0.7581371, 0.2868639, -0.5856085, -0.0053383275, 0.9007416, 0.43432269, 0.6520734, -0.32614994, 0.68441695, -156.87793, 14.068462, 25.777164)
+
+[node name="Items" type="Node3D" parent="." unique_id=579477050]
+
+[node name="NPC" type="Node3D" parent="." unique_id=2111280091]
+
+[node name="Camera" type="Node3D" parent="." unique_id=1542604678]
+
+[node name="Fixed" type="Node3D" parent="Camera" unique_id=374807607]
+
+[node name="Pan" type="Node3D" parent="Camera" unique_id=1200764162]

@@ -80,7 +80,7 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 30.0
+offset_bottom = 45.0
 grow_horizontal = 2
 
 [node name="NameLabel" type="Label" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponDetails/HeaderBox/HeaderVBox" unique_id=248247250]
@@ -89,9 +89,11 @@ theme_override_font_sizes/font_size = 10
 text = "ItemName"
 
 [node name="DescLabel" type="Label" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponDetails/HeaderBox/HeaderVBox" unique_id=1993787964]
+custom_maximum_size = Vector2(184, 32)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "Desc."
+text = "Desc.a\\"
+autowrap_mode = 3
 
 [node name="ActionButtons" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponDetails" unique_id=603142104]
 layout_mode = 2
@@ -128,9 +130,11 @@ theme_override_font_sizes/font_size = 10
 text = "itemName"
 
 [node name="DescLabel" type="Label" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox/HeaderVBox" unique_id=355019396]
+custom_maximum_size = Vector2(184, 32)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Desc"
+autowrap_mode = 3
 
 [node name="ActionButtons" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails" unique_id=181335605]
 layout_mode = 2
