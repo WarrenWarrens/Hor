@@ -24,6 +24,7 @@ extends CanvasLayer
 @onready var action_buttons_container2 = $MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/ActionButtons
 
 @onready var ui_sound_player = $UISoundPlayer
+var action_btn_scene = preload("res://Scenes/ActionButton.tscn")
 
 var item_slot_scene = preload("res://Scenes/ItemSlot.tscn")
 
@@ -136,11 +137,12 @@ func _on_item_slot_pressed(item_data: Dictionary):
 			child.queue_free()
 			
 		for action in item_data["actions"]:
-			var btn = Button.new()
+			var btn = action_btn_scene.instantiate()
 			btn.text = action
 			action_buttons_container1.add_child(btn)
+			btn.pressed.connect(func(): _handle_item_action(action, item_data))
 			
-			btn.pressed.connect(func(): print("Preformed " + action + " on " + item_data["name"]))
+			
 	elif item_data["type"] == "heal" or item_data["type"] =="key":
 		supplies_details.show()
 		
@@ -150,25 +152,39 @@ func _on_item_slot_pressed(item_data: Dictionary):
 			child.queue_free()
 		
 		for action in item_data["actions"]:
-			var btn = Button.new()
+			var btn = action_btn_scene.instantiate()
 			btn.text = action
 			action_buttons_container2.add_child(btn)
-			btn.pressed.connect(func(): print("Preformed " + action + " on " + item_data["name"]))
-	
-	
-	
-	
-
-	
-		
-
+			btn.pressed.connect(func(): _handle_item_action(action, item_data))
+			
 func _on_tools_btn_pressed() -> void:
 	pass 
 
 func _on_options_btn_pressed() -> void:
 	pass 
 
+func _handle_item_action(action: String, item: Dictionary):
+	if item["type"] == "weapon" or item["type"] == "ammo":
+		print("WHAT") 
+		
+	elif item["type"] == "heal" or item["type"] == "key":
+		print("WHAT2") 
 
+	if action == "Use":
+		if item["id"] == "green_herb":
+			PlayerStats.change_health(25)
+			PlayerInventory.remove_item(item["id"],1)
+			build_supplies_list()
+			supplies_details.hide()
+			update_health_colour()
+			print("Used Green Herb")
+			
+	elif action == "Equip":
+		if item["type"] == "weapon":
+			print("Equiped " + item["name"])
+	elif action == "Drop":
+		print("Dropped " + item["name"])
+		
 
 	
 func build_supplies_list():

@@ -70,15 +70,18 @@ layout_mode = 2
 [node name="WeaponDetails" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect" unique_id=248892843]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [node name="HeaderBox" type="Panel" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponDetails" unique_id=684687137]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
 [node name="HeaderVBox" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponDetails/HeaderBox" unique_id=1789117321]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
 
 [node name="NameLabel" type="Label" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponDetails/HeaderBox/HeaderVBox" unique_id=248247250]
 layout_mode = 2
@@ -92,7 +95,6 @@ text = "Desc."
 
 [node name="ActionButtons" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponDetails" unique_id=603142104]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="SuppliesRect" type="HBoxContainer" parent="MainSplit/RightMenu/ContentArea" unique_id=1227338901]
 layout_mode = 2
@@ -107,29 +109,31 @@ layout_mode = 2
 [node name="SuppliesDetails" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect" unique_id=1776286386]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [node name="HeaderBox" type="Panel" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails" unique_id=1089667676]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="HeaderVBox" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox" unique_id=1030471171]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
 
 [node name="NameLabel" type="Label" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox/HeaderVBox" unique_id=1220170949]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "t"
+text = "itemName"
 
 [node name="DescLabel" type="Label" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails/HeaderBox/HeaderVBox" unique_id=355019396]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "t"
+text = "Desc"
 
 [node name="ActionButtons" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesDetails" unique_id=181335605]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="RightLowerMenu" type="HBoxContainer" parent="MainSplit/RightMenu" unique_id=1217935342]
 custom_minimum_size = Vector2(0, 100)

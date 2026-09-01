@@ -100,3 +100,12 @@ func add_item(target_id: String, amount: int):
 			item["quantity"] += amount
 			return 
 	print("ERROR: Item ID " + target_id + " not found in database")
+
+func remove_item(target_id: String, amount: int):
+	for item in items:
+		if item["id"] == target_id:
+			item["quantity"] -= amount
+			if item["quantity"] < 0:
+				item["quantity"] = 0
+			return
+	print("ERROR: Item ID " + target_id + " not found in database")

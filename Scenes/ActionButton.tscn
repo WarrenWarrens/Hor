@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://26vfoasyqhyh"]
+
+[node name="ActionButton" type="Button" unique_id=255864820]
+custom_minimum_size = Vector2(64, 0)
+custom_maximum_size = Vector2(64, -1)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.85490197, 0.61960787, 0, 1)
+theme_override_font_sizes/font_size = 8

@@ -899,9 +899,8 @@ shape = SubResource("ConvexPolygonShape3D_h2stt")
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("6_2a20n")]
 transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -80.848076, 6.139948, 31.70184)
 
-[node name="Area3D" type="Area3D" parent="." unique_id=2040752008 node_paths=PackedStringArray("target_camera")]
+[node name="Area3D" type="Area3D" parent="." unique_id=2040752008]
 script = ExtResource("7_0e82a")
-target_camera = NodePath("../Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2029925486]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -283.25296, -30.693222, 33.62915)
@@ -913,9 +912,8 @@ transform = Transform3D(0.25734988, 0.4024349, -0.8785312, -0.11313206, 0.915448
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=117415705]
 environment = SubResource("Environment_0e82a")
 
-[node name="Area3D2" type="Area3D" parent="." unique_id=784563970 node_paths=PackedStringArray("target_camera")]
+[node name="Area3D2" type="Area3D" parent="." unique_id=784563970]
 script = ExtResource("7_0e82a")
-target_camera = NodePath("../Camera3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1718411777]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -164.15405, 0, -5.5664063)
