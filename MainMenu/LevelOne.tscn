@@ -1,86 +1,86 @@
 [gd_scene format=4 uid="uid://cxfdn38rn88rc"]
 
-[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_yi1ei"]
-[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_obhin"]
-[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="3_2oyfs"]
-[ext_resource type="Texture2D" uid="uid://butkdt2noar0t" path="res://textures/grass2.png" id="3_a2dtv"]
-[ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Scenes/Player.tscn" id="4_obhin"]
-[ext_resource type="Material" uid="uid://h8ev86nq1mpm" path="res://textures/bf205c89ad779da0946fc7251afffe86-dithered.tres" id="4_oekvh"]
-[ext_resource type="Script" uid="uid://c8ur6ydfji6oa" path="res://Scripts/Area.gd" id="5_2oyfs"]
-[ext_resource type="Texture2D" uid="uid://4jpy32b2kqvp" path="res://textures/concrete1.png" id="5_7si22"]
-[ext_resource type="Texture2D" uid="uid://8ev0so7mqheq" path="res://textures/rocks2.png" id="6_w0l5p"]
-[ext_resource type="Texture2D" uid="uid://ddqy71quecuks" path="res://textures/fence1_a.png" id="7_ji2lk"]
-[ext_resource type="Texture2D" uid="uid://dsyg6r8uklwo7" path="res://textures/tree.png" id="8_g6e0d"]
-[ext_resource type="Texture2D" uid="uid://cudx5hnx5xjpj" path="res://textures/bricks3.png" id="9_wrem4"]
-[ext_resource type="Texture2D" uid="uid://cj7s2tymb84tl" path="res://textures/dirt4.png" id="10_8criv"]
-[ext_resource type="Texture2D" uid="uid://c7fh7ohdbki1e" path="res://textures/rust4.png" id="11_l33g0"]
-[ext_resource type="Texture2D" uid="uid://dc3oa7w8ud6jt" path="res://textures/vent.png" id="12_p57c1"]
-[ext_resource type="Texture2D" uid="uid://3ae7q5dwop0p" path="res://textures/sky1.png" id="13_1c2o6"]
-[ext_resource type="Texture2D" uid="uid://dpbqw2lk7wqs0" path="res://textures/planks5.png" id="14_h348y"]
-[ext_resource type="PackedScene" uid="uid://lb88dgwww5ba" path="res://Scenes/Enemy.tscn" id="18_oekvh"]
-[ext_resource type="Script" uid="uid://nv642jiu0vxm" path="res://Levels/Pan.gd" id="19_7si22"]
-[ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/Interact.tscn" id="20_w0l5p"]
-[ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="21_ji2lk"]
-[ext_resource type="Texture2D" uid="uid://c5ejwhro0ctrh" path="res://Assets/PistolAmmo.png" id="22_g6e0d"]
-[ext_resource type="Texture2D" uid="uid://bvvk6t1rwrcvj" path="res://Assets/ShotgunAmmo.png" id="22_wrem4"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_2kc0j"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_iln2m"]
+[ext_resource type="Texture2D" uid="uid://butkdt2noar0t" path="res://textures/grass2.png" id="3_scib8"]
+[ext_resource type="Material" uid="uid://h8ev86nq1mpm" path="res://textures/bf205c89ad779da0946fc7251afffe86-dithered.tres" id="4_85wby"]
+[ext_resource type="Texture2D" uid="uid://4jpy32b2kqvp" path="res://textures/concrete1.png" id="5_xe3wn"]
+[ext_resource type="Texture2D" uid="uid://8ev0so7mqheq" path="res://textures/rocks2.png" id="6_vtctg"]
+[ext_resource type="Texture2D" uid="uid://ddqy71quecuks" path="res://textures/fence1_a.png" id="7_a2s4x"]
+[ext_resource type="Texture2D" uid="uid://dsyg6r8uklwo7" path="res://textures/tree.png" id="8_vxpn6"]
+[ext_resource type="Texture2D" uid="uid://cudx5hnx5xjpj" path="res://textures/bricks3.png" id="9_bxaep"]
+[ext_resource type="Texture2D" uid="uid://cj7s2tymb84tl" path="res://textures/dirt4.png" id="10_p8htc"]
+[ext_resource type="Texture2D" uid="uid://c7fh7ohdbki1e" path="res://textures/rust4.png" id="11_kqdio"]
+[ext_resource type="Texture2D" uid="uid://dc3oa7w8ud6jt" path="res://textures/vent.png" id="12_urddv"]
+[ext_resource type="Texture2D" uid="uid://3ae7q5dwop0p" path="res://textures/sky1.png" id="13_ax7q2"]
+[ext_resource type="Texture2D" uid="uid://dpbqw2lk7wqs0" path="res://textures/planks5.png" id="14_ya5w5"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="15_tthsv"]
+[ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Scenes/Player.tscn" id="16_fd0v5"]
+[ext_resource type="Script" uid="uid://c8ur6ydfji6oa" path="res://Scripts/Area.gd" id="17_rxq5v"]
+[ext_resource type="PackedScene" uid="uid://lb88dgwww5ba" path="res://Scenes/Enemy.tscn" id="18_jaxw0"]
+[ext_resource type="Script" uid="uid://nv642jiu0vxm" path="res://Levels/Pan.gd" id="19_hwo70"]
+[ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/Interact.tscn" id="20_s3rp3"]
+[ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="21_5w6y5"]
+[ext_resource type="Texture2D" uid="uid://bvvk6t1rwrcvj" path="res://Assets/ShotgunAmmo.png" id="22_r6s5w"]
+[ext_resource type="Texture2D" uid="uid://c5ejwhro0ctrh" path="res://Assets/PistolAmmo.png" id="23_1bnp6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_783yi"]
-albedo_texture = ExtResource("3_a2dtv")
+albedo_texture = ExtResource("3_scib8")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfn2b"]
-albedo_texture = ExtResource("5_7si22")
+albedo_texture = ExtResource("5_xe3wn")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qd1ve"]
-albedo_texture = ExtResource("6_w0l5p")
+albedo_texture = ExtResource("6_vtctg")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epagg"]
-albedo_texture = ExtResource("7_ji2lk")
+albedo_texture = ExtResource("7_a2s4x")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lash2"]
-albedo_texture = ExtResource("8_g6e0d")
+albedo_texture = ExtResource("8_vxpn6")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lup7o"]
-albedo_texture = ExtResource("9_wrem4")
+albedo_texture = ExtResource("9_bxaep")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rwf1"]
-albedo_texture = ExtResource("10_8criv")
+albedo_texture = ExtResource("10_p8htc")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bt6gv"]
-albedo_texture = ExtResource("11_l33g0")
+albedo_texture = ExtResource("11_kqdio")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hehvv"]
-albedo_texture = ExtResource("12_p57c1")
+albedo_texture = ExtResource("12_urddv")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wamf8"]
-albedo_texture = ExtResource("13_1c2o6")
+albedo_texture = ExtResource("13_ax7q2")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmqgw"]
-albedo_texture = ExtResource("14_h348y")
+albedo_texture = ExtResource("14_ya5w5")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxypw"]
-albedo_texture = ExtResource("3_2oyfs")
+albedo_texture = ExtResource("15_tthsv")
 metallic_specular = 0.0
 texture_filter = 2
 
@@ -103,7 +103,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
-"material": ExtResource("4_oekvh"),
+"material": ExtResource("4_85wby"),
 "name": "bf205c89ad779da0946fc7251afffe86-dithered",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -376,9 +376,9 @@ point_count = 2
 [node name="Node3D" type="Node3D" unique_id=1827959902]
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=1266291407]
-script = ExtResource("1_yi1ei")
+script = ExtResource("1_2kc0j")
 local_map_file = "uid://d01t503o5fu6u"
-map_settings = ExtResource("2_obhin")
+map_settings = ExtResource("2_iln2m")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=1158505494]
@@ -480,7 +480,7 @@ shape = SubResource("ConvexPolygonShape3D_xg8gq")
 [node name="entity_0_brush_30_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1165706935]
 shape = SubResource("ConvexPolygonShape3D_8f1nm")
 
-[node name="Player" parent="." unique_id=711497073 instance=ExtResource("4_obhin")]
+[node name="Player" parent="." unique_id=711497073 instance=ExtResource("16_fd0v5")]
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 27.607538, 2.4970891, -18.665335)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2025295628]
@@ -491,7 +491,7 @@ transform = Transform3D(-0.7071068, 0.45451942, -0.5416752, 0, 0.7660445, 0.6427
 
 [node name="Area3D" type="Area3D" parent="." unique_id=285658903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.732898, 0)
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1211810006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.912891, 2.4856718, -0.8824849)
@@ -499,7 +499,7 @@ shape = SubResource("BoxShape3D_ttpud")
 
 [node name="Area3D2" type="Area3D" parent="." unique_id=1422714470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.583417, 2.732898, 0)
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=641872071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5383997, 1.3939283, 0)
@@ -507,7 +507,7 @@ shape = SubResource("BoxShape3D_ttpud")
 
 [node name="Area3D3" type="Area3D" parent="." unique_id=960760635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.051405, 2.732898, -19.471146)
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3" unique_id=2053563746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3092442, 0, -7.7145767)
@@ -515,35 +515,35 @@ shape = SubResource("BoxShape3D_ttpud")
 
 [node name="Area3D4" type="Area3D" parent="." unique_id=889995418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1203089, -23.118855)
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4" unique_id=732005921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.471319, -1.1611328, -1.9850693)
 shape = SubResource("BoxShape3D_vyp0t")
 
 [node name="Area3D5" type="Area3D" parent="." unique_id=1523316275]
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D5" unique_id=866224153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.974838, 6.8416443, -32.617897)
 shape = SubResource("BoxShape3D_tgb25")
 
 [node name="Area3D6" type="Area3D" parent="." unique_id=1268215893]
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D6" unique_id=393863888]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.675135, 3.555397, -22.56027)
 shape = SubResource("BoxShape3D_7a8fh")
 
 [node name="Area3D7" type="Area3D" parent="." unique_id=1038246331]
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D7" unique_id=1107481764]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.063356, 1.2567749, -21.827879)
 shape = SubResource("BoxShape3D_42q0v")
 
 [node name="Area3D8" type="Area3D" parent="." unique_id=1077870837]
-script = ExtResource("5_2oyfs")
+script = ExtResource("17_rxq5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D8" unique_id=857615185]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.264156, 6.4540405, -26.006365)
@@ -558,12 +558,12 @@ transform = Transform3D(0.64278764, -0.58682406, 0.4924039, 0, 0.64278764, 0.766
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1445265220]
 environment = SubResource("Environment_a2dtv")
 
-[node name="Enemy" parent="." unique_id=1331686901 instance=ExtResource("18_oekvh")]
+[node name="Enemy" parent="." unique_id=1331686901 instance=ExtResource("18_jaxw0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.398987, 3.150969, -29.417088)
 enemy_id = "kitchen_monster_1"
 
 [node name="Pan" type="Area3D" parent="." unique_id=913326273]
-script = ExtResource("19_7si22")
+script = ExtResource("19_hwo70")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pan" unique_id=178715640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.009689, 6.9282227, 46.831047)
@@ -578,23 +578,23 @@ transform = Transform3D(-0.99283653, 0.004704491, 0.11938809, 0, 0.99922454, -0.
 [node name="Camera3D" type="Camera3D" parent="Pan/Path3D/PathFollow3D" unique_id=167930781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 6)
 
-[node name="Item" parent="." unique_id=2023826472 instance=ExtResource("20_w0l5p")]
+[node name="Item" parent="." unique_id=2023826472 instance=ExtResource("20_s3rp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749779, 3.3257585, 0)
-item_texture = ExtResource("21_ji2lk")
+item_texture = ExtResource("21_5w6y5")
 
-[node name="Item3" parent="." unique_id=1188188603 instance=ExtResource("20_w0l5p")]
+[node name="Item3" parent="." unique_id=1188188603 instance=ExtResource("20_s3rp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.750153, 3.3257585, 0)
 item_id = "shotgun_ammo"
 item_name = "Shotgun Ammo"
 item_amount = 4
-item_texture = ExtResource("22_wrem4")
+item_texture = ExtResource("22_r6s5w")
 
-[node name="Item2" parent="." unique_id=376254814 instance=ExtResource("20_w0l5p")]
+[node name="Item2" parent="." unique_id=376254814 instance=ExtResource("20_s3rp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749779, 3.3257585, 10.008287)
 item_id = "pistol_ammo"
 item_name = "Pistol Ammo"
 item_amount = 40
-item_texture = ExtResource("22_g6e0d")
+item_texture = ExtResource("23_1bnp6")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

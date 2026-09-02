@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/Interact.tscn" id="11_vqjuy"]
 [ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="12_5wso4"]
 [ext_resource type="Material" uid="uid://de5dhacwf351u" path="res://textures/concrete1.tres" id="13_5wso4"]
+[ext_resource type="Texture2D" uid="uid://cwnyuh7gvda52" path="res://textures/rug1.png" id="14_bfvw3"]
 
 [sub_resource type="Environment" id="Environment_0e82a"]
 fog_enabled = true
@@ -567,7 +568,7 @@ size = Vector3(116.32263, 33.54602, 103.4635)
 [node name="Main" type="Node3D" unique_id=1003579749]
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("6_2a20n")]
-transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -80.848076, 6.139948, 24.1921)
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -29.475914, 6.139948, -239.73312)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=117415705]
 environment = SubResource("Environment_0e82a")
@@ -1027,13 +1028,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.705582, 1.4522681, 6.5952
 [node name="DormASouth" type="Marker3D" parent="EastSide/Markers" unique_id=613418283]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -67.288, 1.8375447, -104.471344)
 
-[node name="DormAWest" type="Marker3D" parent="EastSide/Markers" unique_id=1862090549]
+[node name="SpawnEastSideWest" type="Marker3D" parent="EastSide/Markers" unique_id=1862090549]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -30.329582, 4.117884, -213.27136)
 
 [node name="Doors" type="Node3D" parent="EastSide" unique_id=160702650]
 
 [node name="Interact" parent="EastSide/Doors" unique_id=402821868 instance=ExtResource("11_vqjuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.631227, 1.7967324, 4.45977)
+
+[node name="Interact2" parent="EastSide/Doors" unique_id=840528838 instance=ExtResource("11_vqjuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.325285, 2.5833406, -210.3669)
+type = 1
+item_id = ""
+item_name = ""
+item_amount = 0
+item_texture = ExtResource("14_bfvw3")
+unique_world_id = "eastsidedormdoorwest"
+target_scene = "res://Levels/DormA.tscn"
+target_door_id = "SpawnDormAWest"
 
 [connection signal="body_entered" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_exited"]
