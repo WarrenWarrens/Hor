@@ -3,24 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://dsftdhdm06b2q" path="res://Assets/Art/ak1.png" id="1_4ef7o"]
 
 [node name="ItemSlot" type="Button" unique_id=138540426]
-custom_minimum_size = Vector2(32, 32)
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1415300921]
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 1
+custom_minimum_size = Vector2(64, 64)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 96.0
-offset_bottom = 96.0
+offset_right = -256.0
+offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1415300921]
+texture_filter = 1
+layout_mode = 1
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 146.0
+offset_bottom = 146.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_4ef7o")
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=2004462907]
 layout_mode = 1

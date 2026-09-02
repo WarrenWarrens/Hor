@@ -29,19 +29,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LeftMenu" type="VBoxContainer" parent="MainSplit" unique_id=84712597]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
 [node name="SuppliesBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1554579395]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Supplies"
 
 [node name="WeaponsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1801357880]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Weapons"
 
 [node name="ToolsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1709745653]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Tools"
 
 [node name="OptionsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1518031969]
@@ -61,8 +64,9 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="WeaponScroll" type="ScrollContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect" unique_id=356034094]
-custom_minimum_size = Vector2(48, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+scroll_hint_mode = 1
 
 [node name="WeaponList" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponScroll" unique_id=1051856544]
 layout_mode = 2
@@ -102,7 +106,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SuppliesScroll" type="ScrollContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect" unique_id=1669736397]
-custom_minimum_size = Vector2(48, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
 [node name="SuppliesList" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesScroll" unique_id=906751017]
