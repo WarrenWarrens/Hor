@@ -8,7 +8,7 @@ radius = 2.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_ttpud"]
 radius = 5.0
 
-[node name="Item" type="Node3D" unique_id=2023826472]
+[node name="Interact" type="Node3D" unique_id=2023826472]
 script = ExtResource("1_hmchh")
 
 [node name="ItemSprite" type="Sprite3D" parent="." unique_id=1788850870]

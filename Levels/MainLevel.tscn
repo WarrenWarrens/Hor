@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://c8ur6ydfji6oa" path="res://Scripts/Area.gd" id="7_0e82a"]
 [ext_resource type="Material" uid="uid://blyneeq3qtw8q" path="res://textures/o9.tres" id="7_snxwr"]
 [ext_resource type="Material" uid="uid://d216bunghytv3" path="res://textures/c03c4f41a0c213ffb5597deedd13cd1a-dithered.tres" id="8_b2f5p"]
+[ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/ItemPickup.tscn" id="11_vqjuy"]
+[ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="12_5wso4"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_b2f5p"]
 _surfaces = [{
@@ -923,6 +925,10 @@ shape = SubResource("BoxShape3D_vyp0t")
 transform = Transform3D(0.7581371, 0.2868639, -0.5856085, -0.0053383275, 0.9007416, 0.43432269, 0.6520734, -0.32614994, 0.68441695, -156.87793, 14.068462, 25.777164)
 
 [node name="Items" type="Node3D" parent="." unique_id=579477050]
+
+[node name="Interact" parent="Items" unique_id=2023826472 instance=ExtResource("11_vqjuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.1247635, 30.076813)
+item_texture = ExtResource("12_5wso4")
 
 [node name="NPC" type="Node3D" parent="." unique_id=2111280091]
 
