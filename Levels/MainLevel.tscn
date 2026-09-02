@@ -1019,5 +1019,21 @@ transform = Transform3D(0.7356754, 0, 0.67733425, 0, 1, 0, -0.67733425, 0, 0.735
 
 [node name="Pan" type="Node3D" parent="EastSide/Camera" unique_id=1200764162]
 
+[node name="Markers" type="Node3D" parent="EastSide" unique_id=924617478]
+
+[node name="DormAEastLow" type="Marker3D" parent="EastSide/Markers" unique_id=936879937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.705582, 1.4522681, 6.59521)
+
+[node name="DormASouth" type="Marker3D" parent="EastSide/Markers" unique_id=613418283]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -67.288, 1.8375447, -104.471344)
+
+[node name="DormAWest" type="Marker3D" parent="EastSide/Markers" unique_id=1862090549]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -30.329582, 4.117884, -213.27136)
+
+[node name="Doors" type="Node3D" parent="EastSide" unique_id=160702650]
+
+[node name="Interact" parent="EastSide/Doors" unique_id=402821868 instance=ExtResource("11_vqjuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.631227, 1.7967324, 4.45977)
+
 [connection signal="body_entered" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_exited"]
