@@ -25,7 +25,6 @@ extends CanvasLayer
 
 @onready var ui_sound_player = $UISoundPlayer
 var action_btn_scene = preload("res://Scenes/ActionButton.tscn")
-
 var item_slot_scene = preload("res://Scenes/ItemSlot.tscn")
 
 var time_passed: float = 0.0
@@ -180,16 +179,34 @@ func _handle_item_action(action: String, item: Dictionary):
 		print("WHAT") 
 		
 	elif item["type"] == "heal" or item["type"] == "key":
-		print("WHAT2") 
+		if action == "Use":
+			if item["id"] == "green_herb":
+				PlayerStats.change_health(25)
+				PlayerInventory.remove_item(item["id"],1)
+				build_supplies_list()
+				supplies_details.hide()
+				update_health_colour()
+				print("Used Green Herb")
+			
+		if item["type"] == "key" and action == "Use":
+			var player = get_tree().get_first_node_in_group("player")
+			
+			if player and player.current_interactable:
+				var door = player.current_interactable
+				
+				if door.has_method("unlock_door") and door.is_locked:
+					if door.required_key_id == item["id"]:
+						door.unlock_door()
+						close_inventory()
+						player.show_pickup_message("Unlocked door with " + item["name"])
+						return
+					else:
+						print("This key won't fit")
+						return
+						
+			print("Nothing to use this key on")
 
-	if action == "Use":
-		if item["id"] == "green_herb":
-			PlayerStats.change_health(25)
-			PlayerInventory.remove_item(item["id"],1)
-			build_supplies_list()
-			supplies_details.hide()
-			update_health_colour()
-			print("Used Green Herb")
+	
 			
 	elif action == "Equip":
 		if item["type"] == "weapon":

@@ -26,6 +26,7 @@ const MAX_PITCH: float = deg_to_rad(45)
 
 var current_yaw: float = 0.0
 var current_pitch: float = 0.0
+var current_interactable: Node3D = null
 
 func _process(_delta):
 	var wants_first_person = Input.is_action_pressed("aim")

@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://gclbihgeg4w6" path="res://Scripts/Interact.gd" id="1_hmchh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h02av"]
+resource_local_to_scene = true
 radius = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ttpud"]
+resource_local_to_scene = true
 radius = 5.0
 
 [node name="Interact" type="Node3D" unique_id=2023826472]
 script = ExtResource("1_hmchh")
 type = 1
-item_id = ""
-item_name = ""
 item_amount = 0
 
 [node name="ItemSprite" type="Sprite3D" parent="." unique_id=1788850870]
@@ -31,6 +31,8 @@ debug_color = Color(0.94468457, 4.7168137e-06, 0.5982079, 0.41960785)
 [node name="DetectRange" type="CollisionShape3D" parent="DetectZone" unique_id=1923378171]
 shape = SubResource("SphereShape3D_ttpud")
 debug_color = Color(0, 0.55511343, 0.9090877, 0.41960785)
+
+[node name="InteractSound" type="AudioStreamPlayer3D" parent="." unique_id=1226380054]
 
 [connection signal="body_entered" from="PickupZone" to="." method="_on_pickup_zone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="." method="_on_pickup_zone_body_exited"]

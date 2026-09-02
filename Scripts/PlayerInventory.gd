@@ -108,4 +108,11 @@ func remove_item(target_id: String, amount: int):
 			if item["quantity"] < 0:
 				item["quantity"] = 0
 			return
+	
 	print("ERROR: Item ID " + target_id + " not found in database")
+
+func has_item(target_id: String) -> bool:
+	for item in items:
+		if item["id"] == target_id and item["quantity"] > 0:
+			return true
+	return false

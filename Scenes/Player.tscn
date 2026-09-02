@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://0ufhpcbqmkg4" path="res://Assets/Point.png" id="10_yoq75"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ttpud"]
-height = 3.0
+radius = 0.85
+height = 4.163
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ttpud"]
 animations = [{
@@ -111,10 +112,12 @@ radius = 5.0
 script = ExtResource("1_bw61f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=276468983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62808204, 0)
 shape = SubResource("CapsuleShape3D_ttpud")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1550670020]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+visible = false
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ttpud")

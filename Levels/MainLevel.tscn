@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="12_5wso4"]
 [ext_resource type="Material" uid="uid://de5dhacwf351u" path="res://textures/concrete1.tres" id="13_5wso4"]
 [ext_resource type="Texture2D" uid="uid://cwnyuh7gvda52" path="res://textures/rug1.png" id="14_bfvw3"]
+[ext_resource type="Texture2D" uid="uid://cgmjn42k72mqh" path="res://Assets/demon.png" id="14_gkx6n"]
 
 [sub_resource type="Environment" id="Environment_0e82a"]
 fog_enabled = true
@@ -553,10 +554,12 @@ target_door_id = "SpawnDormAEastLow"
 
 [node name="DormAWestDoor" parent="EastSide/Doors" unique_id=840528838 instance=ExtResource("11_vqjuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.325285, 2.5833406, -210.3669)
-item_texture = ExtResource("14_bfvw3")
+item_texture = ExtResource("14_gkx6n")
 unique_world_id = "eastsidedormdoorwest"
 target_scene = "res://Levels/DormA.tscn"
 target_door_id = "SpawnDormAWest"
+is_locked = true
+required_key_id = "library_key"
 
 [node name="DormASouthDoor" parent="EastSide/Doors" unique_id=377388090 instance=ExtResource("11_vqjuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.44572, 2.319209, -104.71649)
