@@ -152,20 +152,37 @@ func _unhandled_input(event):
 func _ready():
 	message_timer.timeout.connect(_on_message_timeout)
 	
+	call_deferred("_handle_spawning")
+	
+	#if GameManager.is_returning_from_battle:
+		#global_position = GameManager.player_position
+		#rotation.y = GameManager.player_rotation_y
+		#GameManager.is_returning_from_battle = false
+	#elif GameManager.target_door_id != "":
+		#var spawn_point = get_tree().current_scene.find_child(GameManager.target_door_id, false)
+		#if spawn_point:
+			#global_position = spawn_point.global_position
+			#rotation.y = spawn_point.rotation.y
+		#else:
+			#print("ERROR no spawn point")
+		#
+		#GameManager.target_door_id = ""
+
+func _handle_spawning():
 	if GameManager.is_returning_from_battle:
 		global_position = GameManager.player_position
 		rotation.y = GameManager.player_rotation_y
 		GameManager.is_returning_from_battle = false
 	elif GameManager.target_door_id != "":
-		var spawn_point = get_tree().current_scene.find_child(GameManager.target_door_id, false)
+		var spawn_point = get_tree().current_scene.find_child(GameManager.target_door_id, true, false)
 		if spawn_point:
 			global_position = spawn_point.global_position
 			rotation.y = spawn_point.rotation.y
 		else:
-			print("ERROR no spawn point")
+			print("ERROR: Could not find spawn point named: " + GameManager.target_door_id)
 		
 		GameManager.target_door_id = ""
-
+		
 func _on_message_timer_timeout() -> void:
 	pass 
 

@@ -171,37 +171,38 @@ shape = SubResource("ConvexPolygonShape3D_knxwk")
 shape = SubResource("ConvexPolygonShape3D_3ld44")
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("3_8awsf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.910862, -30.024635, -66.68417)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -27.805876, -30.024635, -0.06309891)
 
 [node name="Markers" type="Node3D" parent="." unique_id=2023745085]
 
 [node name="SpawnDormAWest" type="Marker3D" parent="Markers" unique_id=577879646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.870155, -80.91962)
 
-[node name="DormASouth" type="Marker3D" parent="Markers" unique_id=510666698]
+[node name="SpawnDormASouth" type="Marker3D" parent="Markers" unique_id=510666698]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -35.85115, -29.313608, 0)
 
-[node name="DormAEastLow" type="Marker3D" parent="Markers" unique_id=956185403]
+[node name="SpawnDormAEastLow" type="Marker3D" parent="Markers" unique_id=956185403]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -30.942593, 120.77315)
-
-[node name="DormAEastHigh" type="Marker3D" parent="Markers" unique_id=1247334664]
 
 [node name="Doors" type="Node3D" parent="." unique_id=1803965133]
 
 [node name="DoorWest" parent="Doors" unique_id=2023826472 instance=ExtResource("10_laik0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36.902077, -85.497574)
-type = 1
-item_id = ""
-item_name = ""
-item_amount = 0
 item_texture = ExtResource("11_api21")
 unique_world_id = "doordormwest"
 target_scene = "res://Levels/MainLevel.tscn"
-target_door_id = "SpawnEastSideWest"
+target_door_id = "SpawnEastSideDormAWest"
 
 [node name="DoorSouth" parent="Doors" unique_id=1007658739 instance=ExtResource("10_laik0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.72908, -33.09395, -5.1114674)
-type = 1
-item_id = ""
-item_name = ""
-item_amount = 0
+item_texture = ExtResource("11_api21")
+unique_world_id = "doordormsouth"
+target_scene = "res://Levels/MainLevel.tscn"
+target_door_id = "SpawnEastSideDormAWest"
+
+[node name="DoorEastLow" parent="Doors" unique_id=179921136 instance=ExtResource("10_laik0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4581528, -36.404915, 122.26929)
+item_texture = ExtResource("11_api21")
+unique_world_id = "doordormeastlow"
+target_scene = "res://Levels/MainLevel.tscn"
+target_door_id = "SpawnEastSideDormAEastLow"
