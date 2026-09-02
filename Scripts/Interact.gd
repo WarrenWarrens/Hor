@@ -59,7 +59,7 @@ func _perform_interaction():
 			
 		InteractType.DOOR:
 			GameManager.target_door_id = target_door_id
-			get_tree().change_scene_to_file("res://Levels/LevelOne.tscn")
+			get_tree().change_scene_to_file(target_scene)
 		InteractType.LEVER:
 			print("Lever pulled!")
 		InteractType.DEBUG:
