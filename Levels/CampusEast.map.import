@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bwfs25lnj1yxu"
+path="res://.godot/imported/CampusEast.map-c1aae34152e0f39b690483919fe61f6e.tres"
+
+[deps]
+
+source_file="res://Levels/CampusEast.map"
+dest_files=["res://.godot/imported/CampusEast.map-c1aae34152e0f39b690483919fe61f6e.tres"]
+
+[params]
+
