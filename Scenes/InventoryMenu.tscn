@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c26jtl8jnrar0"]
 
 [ext_resource type="Script" uid="uid://rionh754n0l5" path="res://InventoryMenu.gd" id="1_h02av"]
+[ext_resource type="Theme" uid="uid://b0wwt0fr2dof1" path="res://Scenes/Inventory.tres" id="2_s512r"]
+
+[sub_resource type="Theme" id="Theme_kefbm"]
 
 [sub_resource type="Gradient" id="Gradient_h02av"]
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
@@ -31,6 +34,7 @@ grow_vertical = 2
 [node name="LeftMenu" type="VBoxContainer" parent="MainSplit" unique_id=84712597]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+theme = ExtResource("2_s512r")
 
 [node name="SuppliesBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1554579395]
 layout_mode = 2
@@ -39,16 +43,19 @@ text = "Supplies"
 
 [node name="WeaponsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1801357880]
 layout_mode = 2
+theme = ExtResource("2_s512r")
 theme_override_font_sizes/font_size = 12
 text = "Weapons"
 
 [node name="ToolsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1709745653]
 layout_mode = 2
+theme = ExtResource("2_s512r")
 theme_override_font_sizes/font_size = 12
 text = "Tools"
 
 [node name="OptionsBtn" type="Button" parent="MainSplit/LeftMenu" unique_id=1518031969]
 layout_mode = 2
+theme = SubResource("Theme_kefbm")
 theme_override_font_sizes/font_size = 8
 text = "Options"
 
@@ -66,6 +73,8 @@ layout_mode = 2
 [node name="WeaponScroll" type="ScrollContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect" unique_id=356034094]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
 [node name="WeaponList" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/WeaponRect/WeaponScroll" unique_id=1051856544]
@@ -108,6 +117,8 @@ layout_mode = 2
 [node name="SuppliesScroll" type="ScrollContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect" unique_id=1669736397]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
 
 [node name="SuppliesList" type="VBoxContainer" parent="MainSplit/RightMenu/ContentArea/SuppliesRect/SuppliesScroll" unique_id=906751017]
 layout_mode = 2

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://0ufhpcbqmkg4" path="res://Assets/Point.png" id="10_yoq75"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ttpud"]
+height = 3.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ttpud"]
 animations = [{

@@ -28,6 +28,16 @@ var action_btn_scene = preload("res://Scenes/ActionButton.tscn")
 
 var item_slot_scene = preload("res://Scenes/ItemSlot.tscn")
 
+var time_passed: float = 0.0
+var pulse_speed: float = 0.0
+var base_colour: Color = Color(0,0,0,0)
+
+func _process(delta):
+	if visible:
+		time_passed += delta
+		var pulse_alpha = ((sin(time_passed * pulse_speed) + 1.0) / 2.0) * 0.6 + 0.2
+		health_overlay.modulate = Color(base_colour.r, base_colour.g, base_colour.b, pulse_alpha)
+
 func _ready():
 	hide()
 	supplies_rect.hide()
@@ -67,26 +77,28 @@ func update_health_colour():
 	var current_health = int(PlayerStats.get_health())
 	
 	if current_health > 70:
-		health_overlay.modulate = Color(0.2,0.8,0.2,0.6)
+		base_colour = Color(0.2,0.8,0.2,0.6)
+		pulse_speed = 8.0
 	elif current_health > 50:
-		health_overlay.modulate = Color(0.8,0.8,0.2,0.6)
+		base_colour = Color(0.8,0.8,0.2,0.6)
+		pulse_speed = 10.0
 	else:
-		health_overlay.modulate = Color(0.8,0.2,0.2,0.6)
-			
+		base_colour = Color(0.8,0.2,0.2,0.6)
+		pulse_speed = 20.0
 
 func _on_weapons_btn_pressed():
 	if weapon_rect.visible:
 		weapon_rect.hide()
 		weapon_details.hide()
-		weapons_btn.remove_theme_color_override("font_color")
+		#weapons_btn.remove_theme_color_override("font_color")
 	else:
 		supplies_rect.hide()
 		supplies_details.hide()
-		supplies_btn.remove_theme_color_override("font_color")
+		#supplies_btn.remove_theme_color_override("font_color")
 		
 		weapon_rect.show()
 		weapon_details.hide()
-		weapons_btn.add_theme_color_override("font_color", Color(0.8,0.8,0.2))
+		#weapons_btn.add_theme_color_override("font_color", Color(0.8,0.8,0.2))
 		build_weapon_list()
 		
 	
@@ -94,15 +106,15 @@ func _on_supplies_btn_pressed():
 	if supplies_rect.visible:
 		supplies_rect.hide()
 		supplies_details.hide()
-		supplies_btn.remove_theme_color_override("font_color")
+		#supplies_btn.remove_theme_color_override("font_color")
 	else:
 		weapon_rect.hide()
 		weapon_details.hide()
-		weapons_btn.remove_theme_color_override("font_color")
+		#weapons_btn.remove_theme_color_override("font_color")
 		
 		supplies_rect.show()
 		supplies_details.hide()
-		supplies_btn.add_theme_color_override("font_color", Color(0.8,0.8,0.2))
+		#supplies_btn.add_theme_color_override("font_color", Color(0.8,0.8,0.2))
 		build_supplies_list()
 	
 	
