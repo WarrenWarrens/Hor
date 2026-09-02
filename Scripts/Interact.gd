@@ -31,8 +31,8 @@ func _ready() -> void:
 	if item_texture:
 		sprite.texture = item_texture
 		sprite.show()
-	elif type != InteractType.ITEM:
-		sprite.hide()
+	#elif type != InteractType.ITEM:
+		#sprite.hide()
 	
 	#if type == InteractType.ITEM:
 		#if GameManager.collected_world_items.has(unique_world_id):

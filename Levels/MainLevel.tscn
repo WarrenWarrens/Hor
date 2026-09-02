@@ -12,8 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/Interact.tscn" id="11_vqjuy"]
 [ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="12_5wso4"]
 [ext_resource type="Material" uid="uid://de5dhacwf351u" path="res://textures/concrete1.tres" id="13_5wso4"]
-[ext_resource type="Texture2D" uid="uid://cwnyuh7gvda52" path="res://textures/rug1.png" id="14_bfvw3"]
-[ext_resource type="Texture2D" uid="uid://cgmjn42k72mqh" path="res://Assets/demon.png" id="14_gkx6n"]
+[ext_resource type="Texture2D" uid="uid://cq3gevnwnddpi" path="res://textures/rust5.png" id="14_gkx6n"]
 
 [sub_resource type="Environment" id="Environment_0e82a"]
 fog_enabled = true
@@ -292,6 +291,29 @@ points = PackedVector3Array(-34, 24, 25, -34, 12.5, 25, -38, 24, 25, -38, 12.5, 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5wso4"]
 size = Vector3(116.32263, 33.54602, 103.4635)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_5wso4"]
+resource_local_to_scene = true
+radius = 5.5984488
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ndu1b"]
+resource_local_to_scene = true
+radius = 5.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndu1b"]
+size = Vector3(9.495499, 5.295288, 2.3845215)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_385d4"]
+resource_local_to_scene = true
+radius = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bfvw3"]
+resource_local_to_scene = true
+radius = 5.5327444
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gkx6n"]
+resource_local_to_scene = true
+radius = 5.0
+
 [node name="Main" type="Node3D" unique_id=1003579749]
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("6_2a20n")]
@@ -528,45 +550,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.051453, 1.440979, 51.23175)
 shape = SubResource("BoxShape3D_5wso4")
 
 [node name="Camera3D" type="Camera3D" parent="EastSide/Camera/Fixed/FixedCameraZone" unique_id=680568757]
-transform = Transform3D(0.7356754, 0, 0.67733425, 0, 1, 0, -0.67733425, 0, 0.7356754, 0, -10.792873, 79.229385)
+transform = Transform3D(0.98184323, 0, -0.18969432, 0, 1, 0, 0.18969432, 0, 0.98184323, 16.514107, -3.1824007, 85.34259)
 
 [node name="Pan" type="Node3D" parent="EastSide/Camera" unique_id=1200764162]
 
 [node name="Markers" type="Node3D" parent="EastSide" unique_id=924617478]
 
 [node name="SpawnEastSideDormAEastLow" type="Marker3D" parent="EastSide/Markers" unique_id=936879937]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.705582, 1.4522681, 6.59521)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -23.705582, 3.1955867, 7.2289705)
 
 [node name="SpawnEastSideDormASouth" type="Marker3D" parent="EastSide/Markers" unique_id=613418283]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -67.288, 1.8375447, -104.471344)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -67.288, 1.8375447, -104.471344)
 
 [node name="SpawnEastSideDormAWest" type="Marker3D" parent="EastSide/Markers" unique_id=1862090549]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -30.329582, 4.117884, -213.27136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.329582, 4.117884, -213.27136)
 
 [node name="Doors" type="Node3D" parent="EastSide" unique_id=160702650]
 
 [node name="DormAEastLowDoor" parent="EastSide/Doors" unique_id=402821868 instance=ExtResource("11_vqjuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.631227, 1.7967324, 4.45977)
-item_texture = ExtResource("14_bfvw3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.631227, 5.6194015, 3.0560966)
 unique_world_id = "eastsidedormdooreastlow"
 target_scene = "res://Levels/DormA.tscn"
 target_door_id = "SpawnDormAEastLow"
 
+[node name="ItemSprite" parent="EastSide/Doors/DormAEastLowDoor" index="0" unique_id=1788850870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+billboard = 0
+texture = ExtResource("14_gkx6n")
+
+[node name="PickupRange" parent="EastSide/Doors/DormAEastLowDoor/PickupZone" parent_id_path=PackedInt32Array(402821868, 1625596736) index="0" unique_id=2110212077]
+shape = SubResource("SphereShape3D_5wso4")
+
+[node name="DetectRange" parent="EastSide/Doors/DormAEastLowDoor/DetectZone" parent_id_path=PackedInt32Array(402821868, 1923807027) index="0" unique_id=1923378171]
+shape = SubResource("SphereShape3D_ndu1b")
+
 [node name="DormAWestDoor" parent="EastSide/Doors" unique_id=840528838 instance=ExtResource("11_vqjuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.325285, 2.5833406, -210.3669)
-item_texture = ExtResource("14_gkx6n")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.325285, 5.54424, -209.52002)
 unique_world_id = "eastsidedormdoorwest"
 target_scene = "res://Levels/DormA.tscn"
 target_door_id = "SpawnDormAWest"
-is_locked = true
-required_key_id = "library_key"
+
+[node name="ItemSprite" parent="EastSide/Doors/DormAWestDoor" index="0" unique_id=1788850870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+billboard = 0
+texture = ExtResource("14_gkx6n")
+
+[node name="PickupRange" parent="EastSide/Doors/DormAWestDoor/PickupZone" parent_id_path=PackedInt32Array(840528838, 1625596736) index="0" unique_id=2110212077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1575203, 0.5896878, -1.3912354)
+shape = SubResource("BoxShape3D_ndu1b")
+
+[node name="DetectRange" parent="EastSide/Doors/DormAWestDoor/DetectZone" parent_id_path=PackedInt32Array(840528838, 1923807027) index="0" unique_id=1923378171]
+shape = SubResource("SphereShape3D_385d4")
 
 [node name="DormASouthDoor" parent="EastSide/Doors" unique_id=377388090 instance=ExtResource("11_vqjuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.44572, 2.319209, -104.71649)
-item_texture = ExtResource("14_bfvw3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.013985, 5.180946, -104.71649)
 unique_world_id = "eastsidedormdoorsouth"
 target_scene = "res://Levels/DormA.tscn"
 target_door_id = "SpawnDormASouth"
 
+[node name="ItemSprite" parent="EastSide/Doors/DormASouthDoor" index="0" unique_id=1788850870]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+billboard = 0
+texture = ExtResource("14_gkx6n")
+
+[node name="PickupRange" parent="EastSide/Doors/DormASouthDoor/PickupZone" parent_id_path=PackedInt32Array(377388090, 1625596736) index="0" unique_id=2110212077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0410576, 0, 0)
+shape = SubResource("SphereShape3D_bfvw3")
+
+[node name="DetectRange" parent="EastSide/Doors/DormASouthDoor/DetectZone" parent_id_path=PackedInt32Array(377388090, 1923807027) index="0" unique_id=1923378171]
+shape = SubResource("SphereShape3D_gkx6n")
+
 [connection signal="body_entered" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_exited"]
+
+[editable path="EastSide/Doors/DormAEastLowDoor"]
+[editable path="EastSide/Doors/DormAWestDoor"]
+[editable path="EastSide/Doors/DormASouthDoor"]
