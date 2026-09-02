@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dmiqmr8le8nff"
+path="res://.godot/imported/CampusAll.map-43a976a7d7ed18311be6ad3f82d77aac.tres"
+
+[deps]
+
+source_file="res://Levels/CampusAll.map"
+dest_files=["res://.godot/imported/CampusAll.map-43a976a7d7ed18311be6ad3f82d77aac.tres"]
+
+[params]
+

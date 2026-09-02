@@ -28,7 +28,7 @@ var current_yaw: float = 0.0
 var current_pitch: float = 0.0
 
 func _process(_delta):
-	var wants_first_person = Input.is_action_pressed("sprint")
+	var wants_first_person = Input.is_action_pressed("aim")
 
 	if wants_first_person and not is_in_first_person:
 		enter_first_person()
@@ -50,9 +50,16 @@ func _physics_process(delta):
 		velocity.y -= delta * 20 
 		move_and_slide()
 		return 
+		
 	if abs(raw_walk) > 0:
-		walk_strength = raw_walk * WALK_SPEED
+		var current_speed = WALK_SPEED
+		
+		if Input.is_action_pressed("sprint") and raw_walk > 0:
+			current_speed = WALK_SPEED * 2.0
+			
+		walk_strength = raw_walk * current_speed
 		turn_strength = 0.0
+		
 	elif abs(raw_turn) > 0:
 		turn_strength = raw_turn * TURN_SPEED
 		walk_strength = 0.0

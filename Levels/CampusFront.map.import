@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cpt1xdaeutje4"
+path="res://.godot/imported/CampusFront.map-b70931b5d757be0538f8e87b3278ceeb.tres"
+
+[deps]
+
+source_file="res://Levels/CampusFront.map"
+dest_files=["res://.godot/imported/CampusFront.map-b70931b5d757be0538f8e87b3278ceeb.tres"]
+
+[params]
+
