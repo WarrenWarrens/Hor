@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bjt2sa1mx7120"]
+
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_i02s3"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_8awsf"]
+[ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Scenes/Player.tscn" id="3_8awsf"]
+
+[node name="DormA" type="Node3D" unique_id=1123390590]
+
+[node name="FuncGodotMap" type="Node3D" parent="." unique_id=100731427]
+script = ExtResource("1_i02s3")
+map_settings = ExtResource("2_8awsf")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="Player" parent="." unique_id=711497073 instance=ExtResource("3_8awsf")]

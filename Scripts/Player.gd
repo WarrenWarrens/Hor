@@ -151,14 +151,23 @@ func _unhandled_input(event):
 
 func _ready():
 	message_timer.timeout.connect(_on_message_timeout)
+	
 	if GameManager.is_returning_from_battle:
 		global_position = GameManager.player_position
 		rotation.y = GameManager.player_rotation_y
 		GameManager.is_returning_from_battle = false
-
+	elif GameManager.target_door_id != "":
+		var spawn_point = get_tree().current_scene.find_child(GameManager.target_door_id, false)
+		if spawn_point:
+			global_position = spawn_point.global_position
+			rotation.y = spawn_point.rotation.y
+		else:
+			print("ERROR no spawn point")
+		
+		GameManager.target_door_id = ""
 
 func _on_message_timer_timeout() -> void:
-	pass # Replace with function body.
+	pass 
 
 func set_indicator_visible(is_visible: bool):
 	indicator.visible = is_visible

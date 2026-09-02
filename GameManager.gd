@@ -1,5 +1,8 @@
 extends Node
 
+var target_door_id: String = ""
+var collected_world_items: Array[String] = []
+
 var last_room_path: String = ""
 var player_position: Vector3 = Vector3.ZERO
 var player_rotation_y: float = 0.0
