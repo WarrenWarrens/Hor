@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dpbqw2lk7wqs0" path="res://textures/planks5.png" id="14_h348y"]
 [ext_resource type="PackedScene" uid="uid://lb88dgwww5ba" path="res://Scenes/Enemy.tscn" id="18_oekvh"]
 [ext_resource type="Script" uid="uid://nv642jiu0vxm" path="res://Levels/Pan.gd" id="19_7si22"]
-[ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/ItemPickup.tscn" id="20_w0l5p"]
+[ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/Interact.tscn" id="20_w0l5p"]
 [ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="21_ji2lk"]
 [ext_resource type="Texture2D" uid="uid://c5ejwhro0ctrh" path="res://Assets/PistolAmmo.png" id="22_g6e0d"]
 [ext_resource type="Texture2D" uid="uid://bvvk6t1rwrcvj" path="res://Assets/ShotgunAmmo.png" id="22_wrem4"]
