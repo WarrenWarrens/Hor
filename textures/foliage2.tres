@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ksygumoyk51k"]
+
+[ext_resource type="Texture2D" uid="uid://bkuou74oh61c0" path="res://textures/foliage2.png" id="1_clas0"]
+
+[resource]
+albedo_texture = ExtResource("1_clas0")
+metallic_specular = 0.0
+texture_filter = 2
