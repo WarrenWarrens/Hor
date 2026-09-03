@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cvqo56kxtnsar"
+path="res://.godot/imported/DormA.11.map-d8aca4747b175b236e391c7ea799557a.tres"
+
+[deps]
+
+source_file="res://Levels/autosave/DormA.11.map"
+dest_files=["res://.godot/imported/DormA.11.map-d8aca4747b175b236e391c7ea799557a.tres"]
+
+[params]
+

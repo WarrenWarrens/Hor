@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dficu0il43ekt"
+path="res://.godot/imported/DormC.map-5c0f659fccc98e59e550b33e435bdf13.tres"
+
+[deps]
+
+source_file="res://Levels/DormC.map"
+dest_files=["res://.godot/imported/DormC.map-5c0f659fccc98e59e550b33e435bdf13.tres"]
+
+[params]
+

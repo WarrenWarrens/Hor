@@ -295,29 +295,29 @@ size = Vector3(116.32263, 33.54602, 103.4635)
 resource_local_to_scene = true
 radius = 5.5984488
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ndu1b"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_bfvw3"]
 resource_local_to_scene = true
 radius = 5.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndu1b"]
 size = Vector3(9.495499, 5.295288, 2.3845215)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_385d4"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_gkx6n"]
 resource_local_to_scene = true
 radius = 5.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_bfvw3"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ndu1b"]
 resource_local_to_scene = true
 radius = 5.5327444
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_gkx6n"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_385d4"]
 resource_local_to_scene = true
 radius = 5.0
 
 [node name="Main" type="Node3D" unique_id=1003579749]
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("6_2a20n")]
-transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -29.475914, 6.139948, -239.73312)
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -29.475914, 6.139948, 32.18638)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=117415705]
 environment = SubResource("Environment_0e82a")
@@ -572,6 +572,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.631227, 5.6194015, 3.0560
 unique_world_id = "eastsidedormdooreastlow"
 target_scene = "res://Levels/DormA.tscn"
 target_door_id = "SpawnDormAEastLow"
+is_locked = true
+required_key_id = "library_key"
 
 [node name="ItemSprite" parent="EastSide/Doors/DormAEastLowDoor" index="0" unique_id=1788850870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -582,7 +584,7 @@ texture = ExtResource("14_gkx6n")
 shape = SubResource("SphereShape3D_5wso4")
 
 [node name="DetectRange" parent="EastSide/Doors/DormAEastLowDoor/DetectZone" parent_id_path=PackedInt32Array(402821868, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_ndu1b")
+shape = SubResource("SphereShape3D_bfvw3")
 
 [node name="DormAWestDoor" parent="EastSide/Doors" unique_id=840528838 instance=ExtResource("11_vqjuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.325285, 5.54424, -209.52002)
@@ -600,7 +602,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1575203, 0.5896878, -1.3912
 shape = SubResource("BoxShape3D_ndu1b")
 
 [node name="DetectRange" parent="EastSide/Doors/DormAWestDoor/DetectZone" parent_id_path=PackedInt32Array(840528838, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_385d4")
+shape = SubResource("SphereShape3D_gkx6n")
 
 [node name="DormASouthDoor" parent="EastSide/Doors" unique_id=377388090 instance=ExtResource("11_vqjuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.013985, 5.180946, -104.71649)
@@ -615,10 +617,10 @@ texture = ExtResource("14_gkx6n")
 
 [node name="PickupRange" parent="EastSide/Doors/DormASouthDoor/PickupZone" parent_id_path=PackedInt32Array(377388090, 1625596736) index="0" unique_id=2110212077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0410576, 0, 0)
-shape = SubResource("SphereShape3D_bfvw3")
+shape = SubResource("SphereShape3D_ndu1b")
 
 [node name="DetectRange" parent="EastSide/Doors/DormASouthDoor/DetectZone" parent_id_path=PackedInt32Array(377388090, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_gkx6n")
+shape = SubResource("SphereShape3D_385d4")
 
 [connection signal="body_entered" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_exited"]

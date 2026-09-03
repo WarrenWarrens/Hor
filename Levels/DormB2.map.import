@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dknt68l8avldo"
+path="res://.godot/imported/DormB2.map-56a8e798eef13269c0621b9d36b54860.tres"
+
+[deps]
+
+source_file="res://Levels/DormB2.map"
+dest_files=["res://.godot/imported/DormB2.map-56a8e798eef13269c0621b9d36b54860.tres"]
+
+[params]
+
