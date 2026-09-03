@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxau72mdomm5u"]
+
+[ext_resource type="Texture2D" uid="uid://b82f628wgy1fv" path="res://textures/fence2.png" id="1_toroy"]
+
+[resource]
+albedo_texture = ExtResource("1_toroy")
+metallic_specular = 0.0
+texture_filter = 2
