@@ -220,43 +220,51 @@ points = PackedVector3Array(0, -15, 104.5, 0, -39.5, 104.5, -1, -15, 104.5, -1, 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qug2k"]
 points = PackedVector3Array(-0.5, -27.5, 334, -0.5, -39, 334, -1, -27.5, 334, -1, -39, 334, -0.5, -27.5, 316.5, -0.5, -39, 316.5, -1, -27.5, 316.5, -1, -39, 316.5)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_58moi"]
-resource_local_to_scene = true
-radius = 5.1726065
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_vyv0u"]
-resource_local_to_scene = true
-radius = 5.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_v8vur"]
-resource_local_to_scene = true
-radius = 5.5818167
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_mfxht"]
-resource_local_to_scene = true
-radius = 5.0
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_ngbrx"]
 resource_local_to_scene = true
-radius = 5.5818167
+radius = 5.1726065
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_545vq"]
 resource_local_to_scene = true
 radius = 5.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_uxei7"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_rxykk"]
 resource_local_to_scene = true
 radius = 5.5818167
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_k0eru"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_1gryn"]
 resource_local_to_scene = true
 radius = 5.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ftck1"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_e7xqu"]
+resource_local_to_scene = true
+radius = 5.5818167
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n4n0m"]
+resource_local_to_scene = true
+radius = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n3yin"]
+resource_local_to_scene = true
+radius = 5.5818167
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1y4es"]
+resource_local_to_scene = true
+radius = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o30hd"]
+resource_local_to_scene = true
+radius = 5.5818167
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ptrdg"]
+resource_local_to_scene = true
+radius = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ohjre"]
 resource_local_to_scene = true
 radius = 5.762267
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ge0ts"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_rej5f"]
 resource_local_to_scene = true
 radius = 5.0
 
@@ -454,14 +462,23 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.405788, -34.2063, -11.957
 
 [node name="Markers" type="Node3D" parent="." unique_id=2023745085]
 
-[node name="SpawnDormAWest" type="Marker3D" parent="Markers" unique_id=577879646]
+[node name="SpawnDormCWest" type="Marker3D" parent="Markers" unique_id=577879646]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -34.870155, -80.91962)
 
-[node name="SpawnDormASouth" type="Marker3D" parent="Markers" unique_id=510666698]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -35.85115, -29.313608, 0)
+[node name="SpawnDormCSouthWestHigh" type="Marker3D" parent="Markers" unique_id=510666698]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -73.73105, -11.522356, -20.824532)
 
-[node name="SpawnDormAEastLow" type="Marker3D" parent="Markers" unique_id=956185403]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30.942593, 120.77315)
+[node name="SpawnDormCSouthEastHigh" type="Marker3D" parent="Markers" unique_id=1164268936]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -71.929184, -22.618078, 211.69559)
+
+[node name="SpawnDormCSouthEastLow" type="Marker3D" parent="Markers" unique_id=186143682]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -38.02153, -34.704033, 211.69559)
+
+[node name="SpawnDormCSouthWestLow" type="Marker3D" parent="Markers" unique_id=992612147]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -38.02153, -34.704033, -17.642899)
+
+[node name="SpawnDormCEast" type="Marker3D" parent="Markers" unique_id=956185403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0917242, -34.462162, 272.60114)
 
 [node name="Doors" type="Node3D" parent="." unique_id=1803965133]
 
@@ -477,32 +494,15 @@ billboard = 0
 texture = ExtResource("8_1y4es")
 
 [node name="PickupRange" parent="Doors/DoorWest/PickupZone" parent_id_path=PackedInt32Array(2023826472, 1625596736) index="0" unique_id=2110212077]
-shape = SubResource("SphereShape3D_58moi")
+shape = SubResource("SphereShape3D_ngbrx")
 
 [node name="DetectRange" parent="Doors/DoorWest/DetectZone" parent_id_path=PackedInt32Array(2023826472, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_vyv0u")
-
-[node name="DoorSouth" parent="Doors" unique_id=1007658739 instance=ExtResource("7_n3yin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9637, -33.09395, -5.1114674)
-unique_world_id = "doordormsouth"
-target_scene = "res://Levels/MainLevel.tscn"
-target_door_id = "SpawnEastSideDormASouth"
-
-[node name="ItemSprite" parent="Doors/DoorSouth" index="0" unique_id=1788850870]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-billboard = 0
-texture = ExtResource("8_1y4es")
-
-[node name="PickupRange" parent="Doors/DoorSouth/PickupZone" parent_id_path=PackedInt32Array(1007658739, 1625596736) index="0" unique_id=2110212077]
-shape = SubResource("SphereShape3D_v8vur")
-
-[node name="DetectRange" parent="Doors/DoorSouth/DetectZone" parent_id_path=PackedInt32Array(1007658739, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_mfxht")
+shape = SubResource("SphereShape3D_545vq")
 
 [node name="DoorNorthAHigh" parent="Doors" unique_id=880075226 instance=ExtResource("7_n3yin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.321884, -9.622611, -17.892494)
 unique_world_id = "doordormsouth"
-target_scene = "res://Levels/MainLevel.tscn"
+target_scene = "res://Levels/DormB.tscn"
 target_door_id = "SpawnEastSideDormASouth"
 
 [node name="ItemSprite" parent="Doors/DoorNorthAHigh" index="0" unique_id=1788850870]
@@ -511,15 +511,32 @@ billboard = 0
 texture = ExtResource("8_1y4es")
 
 [node name="PickupRange" parent="Doors/DoorNorthAHigh/PickupZone" parent_id_path=PackedInt32Array(880075226, 1625596736) index="0" unique_id=2110212077]
-shape = SubResource("SphereShape3D_ngbrx")
+shape = SubResource("SphereShape3D_rxykk")
 
 [node name="DetectRange" parent="Doors/DoorNorthAHigh/DetectZone" parent_id_path=PackedInt32Array(880075226, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_545vq")
+shape = SubResource("SphereShape3D_1gryn")
+
+[node name="DoorNorthALow" parent="Doors" unique_id=989415223 instance=ExtResource("7_n3yin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.277927, -33.478935, -17.892494)
+unique_world_id = "doordormsouth"
+target_scene = "res://Levels/MainLevel.tscn"
+target_door_id = "SpawnEastSideDormASouth"
+
+[node name="ItemSprite" parent="Doors/DoorNorthALow" index="0" unique_id=1788850870]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+billboard = 0
+texture = ExtResource("8_1y4es")
+
+[node name="PickupRange" parent="Doors/DoorNorthALow/PickupZone" parent_id_path=PackedInt32Array(989415223, 1625596736) index="0" unique_id=2110212077]
+shape = SubResource("SphereShape3D_e7xqu")
+
+[node name="DetectRange" parent="Doors/DoorNorthALow/DetectZone" parent_id_path=PackedInt32Array(989415223, 1923807027) index="0" unique_id=1923378171]
+shape = SubResource("SphereShape3D_n4n0m")
 
 [node name="DoorNorthBHigh" parent="Doors" unique_id=303663036 instance=ExtResource("7_n3yin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.99484, -21.211695, 210.66756)
 unique_world_id = "doordormsouth"
-target_scene = "res://Levels/MainLevel.tscn"
+target_scene = "res://Levels/DormB.tscn"
 target_door_id = "SpawnEastSideDormASouth"
 
 [node name="ItemSprite" parent="Doors/DoorNorthBHigh" index="0" unique_id=1788850870]
@@ -528,13 +545,30 @@ billboard = 0
 texture = ExtResource("8_1y4es")
 
 [node name="PickupRange" parent="Doors/DoorNorthBHigh/PickupZone" parent_id_path=PackedInt32Array(303663036, 1625596736) index="0" unique_id=2110212077]
-shape = SubResource("SphereShape3D_uxei7")
+shape = SubResource("SphereShape3D_n3yin")
 
 [node name="DetectRange" parent="Doors/DoorNorthBHigh/DetectZone" parent_id_path=PackedInt32Array(303663036, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_k0eru")
+shape = SubResource("SphereShape3D_1y4es")
+
+[node name="DoorNorthBLow" parent="Doors" unique_id=108577947 instance=ExtResource("7_n3yin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.80503, -33.141747, 210.66756)
+unique_world_id = "doordormsouth"
+target_scene = "res://Levels/MainLevel.tscn"
+target_door_id = "SpawnEastSideDormASouth"
+
+[node name="ItemSprite" parent="Doors/DoorNorthBLow" index="0" unique_id=1788850870]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+billboard = 0
+texture = ExtResource("8_1y4es")
+
+[node name="PickupRange" parent="Doors/DoorNorthBLow/PickupZone" parent_id_path=PackedInt32Array(108577947, 1625596736) index="0" unique_id=2110212077]
+shape = SubResource("SphereShape3D_o30hd")
+
+[node name="DetectRange" parent="Doors/DoorNorthBLow/DetectZone" parent_id_path=PackedInt32Array(108577947, 1923807027) index="0" unique_id=1923378171]
+shape = SubResource("SphereShape3D_ptrdg")
 
 [node name="DoorEastLow" parent="Doors" unique_id=179921136 instance=ExtResource("7_n3yin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4581528, -33.262398, 125.33708)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4581528, -33.262398, 278.3588)
 unique_world_id = "doordormeastlow"
 target_scene = "res://Levels/MainLevel.tscn"
 target_door_id = "SpawnEastSideDormAEastLow"
@@ -545,10 +579,10 @@ billboard = 0
 texture = ExtResource("8_1y4es")
 
 [node name="PickupRange" parent="Doors/DoorEastLow/PickupZone" parent_id_path=PackedInt32Array(179921136, 1625596736) index="0" unique_id=2110212077]
-shape = SubResource("SphereShape3D_ftck1")
+shape = SubResource("SphereShape3D_ohjre")
 
 [node name="DetectRange" parent="Doors/DoorEastLow/DetectZone" parent_id_path=PackedInt32Array(179921136, 1923807027) index="0" unique_id=1923378171]
-shape = SubResource("SphereShape3D_ge0ts")
+shape = SubResource("SphereShape3D_rej5f")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=71820997]
 
@@ -563,8 +597,9 @@ shape = SubResource("BoxShape3D_wp5l0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6872654, 1.8033447, 10.600044)
 
 [editable path="Doors/DoorWest"]
-[editable path="Doors/DoorSouth"]
 [editable path="Doors/DoorNorthAHigh"]
+[editable path="Doors/DoorNorthALow"]
 [editable path="Doors/DoorNorthBHigh"]
+[editable path="Doors/DoorNorthBLow"]
 [editable path="Doors/DoorEastLow"]
 [editable path="Node3D/FixedCameraZone"]
