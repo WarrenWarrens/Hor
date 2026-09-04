@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cjbn2jh0nxggs"]
+
+[ext_resource type="Script" uid="uid://ta1rm7cnnb7x" path="res://Scenes/DevConsole.gd" id="1_4eon7"]
+
+[node name="DevConsole" type="CanvasLayer" unique_id=1688265779]
+process_mode = 3
+layer = 128
+script = ExtResource("1_4eon7")
+
+[node name="Panel" type="Panel" parent="." unique_id=1837542835]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1784780860]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OutputLog" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1204794971]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+scroll_following = true
+
+[node name="InputLine" type="LineEdit" parent="Panel/VBoxContainer" unique_id=1336838377]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
