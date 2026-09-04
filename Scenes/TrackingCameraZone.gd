@@ -14,8 +14,8 @@ var is_active: bool = false
 var initial_rotation: Vector3
 
 func _ready():
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	#body_entered.connect(_on_body_entered)
+	#body_exited.connect(_on_body_exited)
 	initial_rotation = target_camera.rotation
 
 func _on_body_entered(body):

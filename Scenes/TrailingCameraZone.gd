@@ -13,8 +13,8 @@ var player: Node3D = null
 var is_active: bool = false
 
 func _ready():
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	#body_entered.connect(_on_body_entered)
+	#body_exited.connect(_on_body_exited)
 	
 	# Detach the arm from the Area3D so it can freely follow the player
 	spring_arm.top_level = true 
