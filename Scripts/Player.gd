@@ -152,6 +152,7 @@ func _unhandled_input(event):
 
 func _ready():
 	message_timer.timeout.connect(_on_message_timeout)
+	GameManager.can_open_inventory = true
 	
 	call_deferred("_handle_spawning")
 	

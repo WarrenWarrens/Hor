@@ -44,6 +44,9 @@ func _ready():
 	weapon_details.hide()
 
 func _input(event):
+	if not GameManager.can_open_inventory:
+		return
+		
 	if event.is_action_pressed("ui_cancel"):
 		if get_tree().paused:
 			close_inventory()

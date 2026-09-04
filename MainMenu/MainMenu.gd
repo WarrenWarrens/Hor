@@ -5,6 +5,7 @@ var level: int = 1
 
 
 func _ready() -> void:
+	GameManager.can_open_inventory = false
 	$CenterContainer/SettingsMenu/Fullscreen.button_pressed = true if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN else false
 
 func _on_play_pressed() -> void:

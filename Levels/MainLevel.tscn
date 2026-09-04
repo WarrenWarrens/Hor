@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/Interact.tscn" id="11_vqjuy"]
 [ext_resource type="Texture2D" uid="uid://ch3ctcha6pc7k" path="res://Assets/GreenHerb.png" id="12_5wso4"]
 [ext_resource type="Material" uid="uid://de5dhacwf351u" path="res://textures/concrete1.tres" id="13_5wso4"]
+[ext_resource type="PackedScene" uid="uid://dhkdseapgy7yb" path="res://Scenes/PostProcess.tscn" id="14_bfvw3"]
 [ext_resource type="Texture2D" uid="uid://cq3gevnwnddpi" path="res://textures/rust5.png" id="14_gkx6n"]
 
 [sub_resource type="Environment" id="Environment_0e82a"]
@@ -875,6 +876,8 @@ shape = SubResource("SphereShape3D_ikh7f")
 
 [node name="DetectRange" parent="EastSide/Doors/DormASouthDoor/DetectZone" parent_id_path=PackedInt32Array(377388090, 1923807027) index="0" unique_id=1923378171]
 shape = SubResource("SphereShape3D_o2g6k")
+
+[node name="PostProcess" parent="." unique_id=814436906 instance=ExtResource("14_bfvw3")]
 
 [connection signal="body_entered" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EastSide/Camera/Fixed/FixedCameraZone" to="EastSide/Camera/Fixed/FixedCameraZone" method="_on_body_exited"]

@@ -13,3 +13,4 @@ var defeated_enemies: Array[String] = []
 
 var enemy_type_to_spawn: String = ""
 var current_enemy_id: String = ""
+var can_open_inventory: bool = false
