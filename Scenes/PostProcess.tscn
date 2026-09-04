@@ -121,6 +121,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=798792536]
+visible = false
 material = SubResource("ShaderMaterial_7a8fh")
 anchors_preset = 15
 anchor_right = 1.0
