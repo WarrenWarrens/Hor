@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bknrxy41q0dhu"]
+
+[ext_resource type="Script" uid="uid://d4fqkei270tww" path="res://Scenes/TrackingCameraZone.gd" id="1_h3dst"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_inu1c"]
+
+[node name="TrackingCameraZone" type="Area3D" unique_id=1414798381]
+script = ExtResource("1_h3dst")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1563876958]
+shape = SubResource("BoxShape3D_inu1c")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=503248986]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

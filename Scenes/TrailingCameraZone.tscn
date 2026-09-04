@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://e47jkl6ki634"]
+
+[ext_resource type="Script" uid="uid://c2aaytetu5k5o" path="res://Scenes/TrailingCameraZone.gd" id="1_ltnsu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ttpud"]
+
+[node name="TrailingCameraZone" type="Area3D" unique_id=980445171]
+script = ExtResource("1_ltnsu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=20824010]
+shape = SubResource("SphereShape3D_ttpud")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1125137193]
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=524882599]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
