@@ -5,7 +5,7 @@ extends Area3D
 
 @onready var limit_a = $LimitA
 @onready var limit_b = $LimitB
-@onready var target_camera = $Camera3D
+@onready var target_camera = $SpringArm3D/Camera3D
 
 var player: Node3D = null
 var is_active: bool = false
