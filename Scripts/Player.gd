@@ -16,6 +16,7 @@ var walk_strength: float = 0
 @onready var message_label = $HUD/MessageLabel
 @onready var message_timer = $HUD/MessageTimer
 @onready var flashlight = $Head/Camera3D/Flashlight
+@onready var trailing_camera = $SpringArm3D/TrailingCamera
 
 var is_in_first_person: bool = false
 var previous_camera: Camera3D = null 
@@ -153,7 +154,7 @@ func _unhandled_input(event):
 func _ready():
 	message_timer.timeout.connect(_on_message_timeout)
 	GameManager.can_open_inventory = true
-	
+	trailing_camera.make_current()
 	call_deferred("_handle_spawning")
 	
 	#if GameManager.is_returning_from_battle:

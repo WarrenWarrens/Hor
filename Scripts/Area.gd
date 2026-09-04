@@ -23,4 +23,4 @@ func _on_body_exited(body):
 
 func _check_fallback(body):
 	if target_camera.current:
-		body.fp_camera.make_current()
+		body.trailing_camera.make_current() 

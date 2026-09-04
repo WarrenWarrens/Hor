@@ -248,7 +248,7 @@ radius = 5.0
 size = Vector3(39.49401, 7.270447, 29.772293)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bcss0"]
-size = Vector3(71.374115, 10.88562, 75.36627)
+size = Vector3(24.289648, 10.88562, 84.183136)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8udlc"]
 radius = 8.89456
@@ -484,21 +484,20 @@ shape = SubResource("BoxShape3D_wp5l0")
 transform = Transform3D(-0.16034083, 0, -0.98706174, 0, 1, 0, 0.98706174, 0, -0.16034083, 0.44781876, 5.4743176, 27.827492)
 
 [node name="TrackingCameraZone" type="Area3D" parent="Camera" unique_id=1414798381]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3316462, -32.331993, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.3316462, -32.331993, -20.929012)
 script = ExtResource("13_wp5l0")
-x_limits = Vector2(-15, 10)
-z_limits = Vector2(-15, 10)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera/TrackingCameraZone" unique_id=1563876958]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1169283, -0.4907837, 5.9940643)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7387848, -0.4907837, 1.5856322)
 shape = SubResource("BoxShape3D_bcss0")
 
 [node name="Camera3D" type="Camera3D" parent="Camera/TrackingCameraZone" unique_id=503248986]
-transform = Transform3D(-1, 6.1817246e-08, -6.1817246e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 4.440874, -33.05381)
+transform = Transform3D(1, -3.5527137e-15, 3.5527137e-15, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -3.8146973e-06, 4.440874, 29.32824)
 
 [node name="TrailingCameraZone" type="Area3D" parent="Camera" unique_id=980445171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5978553, -33.863586, 57.68385)
 script = ExtResource("14_wp5l0")
+follow_from_front = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera/TrailingCameraZone" unique_id=20824010]
 shape = SubResource("SphereShape3D_8udlc")

@@ -3,6 +3,8 @@ extends Area3D
 @export var follow_speed: float = 6.0
 @export var rotation_speed: float = 3.0
 @export var height_offset: float = 1.5 # Aim at the character's shoulders/head
+@export var camera_pitch: float = 15.0
+@export var follow_from_front: bool = false
 
 @onready var spring_arm = $SpringArm3D
 @onready var target_camera = $SpringArm3D/Camera3D
@@ -22,7 +24,6 @@ func _on_body_entered(body):
 		player = body
 		is_active = true
 		
-		# Instantly snap the camera behind the player upon entering the zone
 		spring_arm.global_position = player.global_position + Vector3(0, height_offset, 0)
 		spring_arm.rotation.y = player.rotation.y
 		
@@ -36,18 +37,24 @@ func _on_body_exited(body):
 
 func _check_fallback(body):
 	if target_camera.current:
-		body.fp_camera.make_current()
+		body.trailing_camera.make_current() 
+
 
 func _process(delta):
 	if is_active and player:
-		# 1. Smoothly follow the player's physical position
 		var target_pos = player.global_position + Vector3(0, height_offset, 0)
 		spring_arm.global_position = spring_arm.global_position.lerp(target_pos, delta * follow_speed)
 		
+		
+		var target_rot_y = player.rotation.y
+		if follow_from_front:
+			target_rot_y += PI
+			
+		spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, target_rot_y, delta)
+		spring_arm.rotation_degrees.x = camera_pitch
 		# 2. Smoothly rotate the arm to trail behind the player's back
 		# Using lerp_angle prevents the camera from violently spinning the wrong way around
-		spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, player.rotation.y, delta * rotation_speed)
 		
 		# 3. Optional SH3 mechanic: Pressing sprint/aim instantly snaps camera behind player
-		# if Input.is_action_just_pressed("aim"):
-		#     spring_arm.rotation.y = player.rotation.y
+		if Input.is_action_just_pressed("aim"):
+			spring_arm.rotation.y = player.rotation.y
