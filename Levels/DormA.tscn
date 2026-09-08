@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c60758tjxw02u" path="res://Scenes/Interact.tscn" id="10_laik0"]
 [ext_resource type="Texture2D" uid="uid://cq3gevnwnddpi" path="res://textures/rust5.png" id="11_b2qvv"]
 [ext_resource type="PackedScene" uid="uid://bdhy5feqsc4p" path="res://Scenes/FixedCameraZone.tscn" id="13_rn702"]
-[ext_resource type="Script" uid="uid://d4fqkei270tww" path="res://Scenes/TrackingCameraZone.gd" id="13_wp5l0"]
-[ext_resource type="Script" uid="uid://c2aaytetu5k5o" path="res://Scenes/TrailingCameraZone.gd" id="14_wp5l0"]
+[ext_resource type="Script" uid="uid://d4fqkei270tww" path="res://Scripts/TrackingCameraZone.gd" id="13_wp5l0"]
+[ext_resource type="Script" uid="uid://c2aaytetu5k5o" path="res://Scripts/TrailingCameraZone.gd" id="14_wp5l0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_641xs"]
 albedo_texture = ExtResource("9_bcss0")

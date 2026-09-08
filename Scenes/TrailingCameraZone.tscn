@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://e47jkl6ki634"]
 
-[ext_resource type="Script" uid="uid://c2aaytetu5k5o" path="res://Scenes/TrailingCameraZone.gd" id="1_ltnsu"]
+[ext_resource type="Script" uid="uid://c2aaytetu5k5o" path="res://Scripts/TrailingCameraZone.gd" id="1_ltnsu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ttpud"]
 

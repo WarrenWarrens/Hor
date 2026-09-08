@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dhkdseapgy7yb"]
 
-[ext_resource type="Shader" uid="uid://cfvqv58ygo4ob" path="res://Scenes/CRT.gdshader" id="1_0mi4j"]
-[ext_resource type="Shader" uid="uid://3twdbbhcokcn" path="res://Scenes/Buck.gdshader" id="2_rjrhm"]
-[ext_resource type="Shader" uid="uid://db65c722xvqt0" path="res://Scenes/Highlight.gdshader" id="3_85qmu"]
-[ext_resource type="Shader" uid="uid://jpxa8abdkiih" path="res://Scenes/Twirl.gdshader" id="4_eclo0"]
+[ext_resource type="Shader" uid="uid://cfvqv58ygo4ob" path="res://Shaders/CRT.gdshader" id="1_0mi4j"]
+[ext_resource type="Script" uid="uid://dsurty4mx6nqx" path="res://Scenes/PostProcess.gd" id="1_8c4iv"]
+[ext_resource type="Shader" uid="uid://3twdbbhcokcn" path="res://Shaders/Buck.gdshader" id="2_rjrhm"]
+[ext_resource type="Shader" uid="uid://db65c722xvqt0" path="res://Shaders/Highlight.gdshader" id="3_85qmu"]
+[ext_resource type="Shader" uid="uid://jpxa8abdkiih" path="res://Shaders/Twirl.gdshader" id="4_eclo0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttpud"]
 shader = ExtResource("1_0mi4j")
@@ -31,7 +32,7 @@ shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vyp0t"]
 shader = ExtResource("2_rjrhm")
-shader_parameter/exposure = 1.0
+shader_parameter/exposure = 0.79600001406
 shader_parameter/contrast = 1.25
 shader_parameter/saturation = 0.9
 shader_parameter/enable_pixelate = true
@@ -74,6 +75,7 @@ shader_parameter/hue_shift_speed = 1.0
 
 [node name="PostProcess" type="CanvasLayer" unique_id=814436906]
 layer = 100
+script = ExtResource("1_8c4iv")
 
 [node name="CRT" type="ColorRect" parent="." unique_id=2135663483]
 visible = false

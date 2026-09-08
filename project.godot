@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://bvhx3abnw6wex"
 SceneTransition="*uid://deegfjrl66jm2"
-InventoryMenu="*uid://c26jtl8jnrar0"
 PlayerInventory="*uid://ug6pxju0vehy"
 PlayerStats="*uid://dk3h3gn3hs52p"
 DevConsole="*uid://cjbn2jh0nxggs"

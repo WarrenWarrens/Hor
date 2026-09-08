@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjbn2jh0nxggs"]
 
-[ext_resource type="Script" uid="uid://ta1rm7cnnb7x" path="res://Scenes/DevConsole.gd" id="1_4eon7"]
+[ext_resource type="Script" uid="uid://ta1rm7cnnb7x" path="res://Scripts/DevConsole.gd" id="1_4eon7"]
 
 [node name="DevConsole" type="CanvasLayer" unique_id=1688265779]
 process_mode = 3

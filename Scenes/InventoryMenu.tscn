@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c26jtl8jnrar0"]
 
 [ext_resource type="Script" uid="uid://rionh754n0l5" path="res://InventoryMenu.gd" id="1_h02av"]
-[ext_resource type="Theme" uid="uid://b0wwt0fr2dof1" path="res://Scenes/Inventory.tres" id="2_s512r"]
+[ext_resource type="Theme" uid="uid://b0wwt0fr2dof1" path="res://Shaders/Inventory.tres" id="2_s512r"]
 
 [sub_resource type="Theme" id="Theme_kefbm"]
 

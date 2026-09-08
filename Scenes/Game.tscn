@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://3v4qt0ue8had"]
 
-[ext_resource type="Script" uid="uid://cnrnvu5oxrfdb" path="res://Scenes/Game.gd" id="1_4q8tf"]
+[ext_resource type="Script" uid="uid://cnrnvu5oxrfdb" path="res://Scripts/Game.gd" id="1_4q8tf"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_alh3a"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_4q8tf"]
 [ext_resource type="Material" uid="uid://bqeepaa3fq2uc" path="res://textures/dc480092d72e44f176508e89742c37ee-dithered.tres" id="3_x3xnh"]
@@ -18,6 +18,11 @@
 [ext_resource type="Material" uid="uid://exbvfa4b6gmh" path="res://textures/sky1.tres" id="15_iyesh"]
 [ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Scenes/Player.tscn" id="16_i1pr2"]
 [ext_resource type="Script" uid="uid://cnj85jrf4gm8i" path="res://FullscreenZone.gd" id="18_x3xnh"]
+[ext_resource type="Shader" uid="uid://cfvqv58ygo4ob" path="res://Shaders/CRT.gdshader" id="19_lbihj"]
+[ext_resource type="Shader" uid="uid://3twdbbhcokcn" path="res://Shaders/Buck.gdshader" id="20_raj38"]
+[ext_resource type="Shader" uid="uid://db65c722xvqt0" path="res://Shaders/Highlight.gdshader" id="21_8e0uq"]
+[ext_resource type="Shader" uid="uid://jpxa8abdkiih" path="res://Shaders/Twirl.gdshader" id="22_i0vto"]
+[ext_resource type="PackedScene" uid="uid://c26jtl8jnrar0" path="res://Scenes/InventoryMenu.tscn" id="23_3jf1l"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_karrd"]
 _surfaces = [{
@@ -355,6 +360,73 @@ points = PackedVector3Array(3, 6, 29.5, 3, 5.5, 29.5, -15.5, 6, 29.5, -15.5, 5.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_8r6kd"]
 size = Vector3(12.248657, 4.9608154, 9.920685)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttpud"]
+shader = ExtResource("19_lbihj")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vyp0t"]
+shader = ExtResource("20_raj38")
+shader_parameter/exposure = 1.0
+shader_parameter/contrast = 1.25
+shader_parameter/saturation = 0.9
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 2.0
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 12.0
+shader_parameter/dither_strength = 0.75
+shader_parameter/chrom_aberration = 4.0
+shader_parameter/vignette_strength = 1.0
+shader_parameter/grain_strength = 0.2
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgb25"]
+shader = ExtResource("21_8e0uq")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7a8fh"]
+shader = ExtResource("22_i0vto")
+shader_parameter/time_factor = 1.0
+shader_parameter/wave_strength = 0.05
+shader_parameter/ripple_speed = 1.0
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/edge_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/glow_intensity = 1.5
+shader_parameter/edge_pulse = 1.0
+shader_parameter/noise_scale = 1.0
+shader_parameter/swirl_strength = 0.5
+shader_parameter/hue_shift_speed = 1.0
+
 [node name="GameOverlay" type="Control" unique_id=888279886]
 custom_minimum_size = Vector2(640, 480)
 layout_mode = 3
@@ -365,7 +437,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4q8tf")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=446857826]
+[node name="BackgroundContainer" type="Control" parent="." unique_id=2096138641]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -381,8 +453,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -217.3
-offset_top = -164.0
+offset_left = -320.0
+offset_top = -240.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -601,3 +673,62 @@ shape = SubResource("BoxShape3D_8r6kd")
 debug_color = Color(0.6329632, 0.5283364, 0.035653334, 0.41960785)
 
 [node name="Doors" type="Node3D" parent="SubViewportContainer/SubViewport/WU7" unique_id=1746797583]
+
+[node name="PostProcess" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=814436906]
+layer = 100
+
+[node name="CRT" type="ColorRect" parent="SubViewportContainer/SubViewport/PostProcess" unique_id=2135663483]
+visible = false
+material = SubResource("ShaderMaterial_ttpud")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buck" type="ColorRect" parent="SubViewportContainer/SubViewport/PostProcess" unique_id=1885073812]
+visible = false
+material = SubResource("ShaderMaterial_vyp0t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Highlight" type="ColorRect" parent="SubViewportContainer/SubViewport/PostProcess" unique_id=1987119136]
+visible = false
+material = SubResource("ShaderMaterial_tgb25")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/PostProcess" unique_id=1694279029]
+visible = false
+material = SubResource("ShaderMaterial_7a8fh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="SubViewportContainer/SubViewport/PostProcess" unique_id=1687204065]
+visible = false
+material = SubResource("ShaderMaterial_7a8fh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="SubViewportContainer/SubViewport/PostProcess" unique_id=798792536]
+visible = false
+material = SubResource("ShaderMaterial_7a8fh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryMenu" parent="SubViewportContainer/SubViewport" unique_id=2039048301 instance=ExtResource("23_3jf1l")]

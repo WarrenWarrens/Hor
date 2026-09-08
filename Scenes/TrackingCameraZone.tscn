@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bknrxy41q0dhu"]
 
-[ext_resource type="Script" uid="uid://d4fqkei270tww" path="res://Scenes/TrackingCameraZone.gd" id="1_h3dst"]
+[ext_resource type="Script" uid="uid://d4fqkei270tww" path="res://Scripts/TrackingCameraZone.gd" id="1_h3dst"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_inu1c"]
 
