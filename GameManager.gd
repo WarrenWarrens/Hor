@@ -1,4 +1,5 @@
 extends Node
+signal toggle_fullscreen(is_fullscreen: bool)
 
 var target_door_id: String = ""
 var collected_world_items: Array[String] = []

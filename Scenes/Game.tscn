@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://3v4qt0ue8had"]
 
+[ext_resource type="Script" uid="uid://cnrnvu5oxrfdb" path="res://Scenes/Game.gd" id="1_4q8tf"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_alh3a"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_4q8tf"]
 [ext_resource type="Material" uid="uid://bqeepaa3fq2uc" path="res://textures/dc480092d72e44f176508e89742c37ee-dithered.tres" id="3_x3xnh"]
@@ -16,6 +17,7 @@
 [ext_resource type="Material" uid="uid://c6062gqexndv8" path="res://textures/80b48739406d08fddde5d290707479b6-dithered.tres" id="14_i4lct"]
 [ext_resource type="Material" uid="uid://exbvfa4b6gmh" path="res://textures/sky1.tres" id="15_iyesh"]
 [ext_resource type="PackedScene" uid="uid://d3rbtmsitq5v4" path="res://Scenes/Player.tscn" id="16_i1pr2"]
+[ext_resource type="Script" uid="uid://cnj85jrf4gm8i" path="res://FullscreenZone.gd" id="18_x3xnh"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_karrd"]
 _surfaces = [{
@@ -350,6 +352,9 @@ points = PackedVector3Array(3, 6, 3, 3, 5.5, 3, -2.5, 6, 3, -2.5, 5.5, 3, 3, 6, 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dwdlr"]
 points = PackedVector3Array(3, 6, 29.5, 3, 5.5, 29.5, -15.5, 6, 29.5, -15.5, 5.5, 29.5, 3, 6, -1.5, 3, 5.5, -1.5, -15.5, 6, -1.5, -15.5, 5.5, -1.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8r6kd"]
+size = Vector3(12.248657, 4.9608154, 9.920685)
+
 [node name="GameOverlay" type="Control" unique_id=888279886]
 layout_mode = 3
 anchors_preset = 15
@@ -357,6 +362,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4q8tf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=446857826]
 layout_mode = 1
@@ -584,5 +590,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2782726, 2.4952524, -10.841
 [node name="Camera" type="Node3D" parent="SubViewportContainer/SubViewport/WU7" unique_id=321838561]
 
 [node name="Markers" type="Node3D" parent="SubViewportContainer/SubViewport/WU7" unique_id=1388746751]
+
+[node name="FullscreenZone" type="Area3D" parent="SubViewportContainer/SubViewport/WU7/Markers" unique_id=1212785279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.868568, 2.8598404, 1.1157603)
+script = ExtResource("18_x3xnh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/WU7/Markers/FullscreenZone" unique_id=1163992514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9899297, 0.13323975, 2.5382538)
+shape = SubResource("BoxShape3D_8r6kd")
+debug_color = Color(0.6329632, 0.5283364, 0.035653334, 0.41960785)
 
 [node name="Doors" type="Node3D" parent="SubViewportContainer/SubViewport/WU7" unique_id=1746797583]

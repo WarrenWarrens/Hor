@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://lkqdibfw3odr"]
+
+[ext_resource type="Script" uid="uid://cnj85jrf4gm8i" path="res://FullscreenZone.gd" id="1_yjfdy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3tutx"]
+
+[node name="FullscreenZone" type="Area3D" unique_id=1212785279]
+script = ExtResource("1_yjfdy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1163992514]
+shape = SubResource("BoxShape3D_3tutx")
