@@ -6,7 +6,7 @@ const TURN_SPEED: float = 3.0
 var turn_strength: float = 0
 var walk_strength: float = 0
 
-#PLAYER IS 8 x 8
+#PLAYER IS 8 x 8 or 128x128
 
 @onready var sprite = $AnimatedSprite3D 
 @onready var head = $Head
