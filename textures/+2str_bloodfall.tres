@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d16ovxwe23yd3"]
+
+[ext_resource type="Texture2D" uid="uid://dt3l6jssr0kgs" path="res://textures/+2str_bloodfall.png" id="1_e5i2a"]
+
+[resource]
+albedo_texture = ExtResource("1_e5i2a")
+metallic_specular = 0.0
+texture_filter = 2
