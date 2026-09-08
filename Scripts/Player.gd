@@ -113,20 +113,18 @@ func update_sprite_direction():
 
 func enter_first_person():
 	is_in_first_person = true
-
 	previous_camera = get_viewport().get_camera_3d()
 	fp_camera.make_current()
-
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 	current_yaw = 0.0
 	current_pitch = 0.0
 	head.rotation.y = 0.0
 	fp_camera.rotation.x = 0.0
+	GameManager.toggle_fullscreen.emit(true)
 
 func exit_first_person():
 	is_in_first_person = false
-
 	if previous_camera:
 		previous_camera.make_current()
 		
@@ -134,8 +132,9 @@ func exit_first_person():
 	fp_camera.rotation = Vector3.ZERO
 	current_yaw = 0.0
 	current_pitch = 0.0
-		
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	GameManager.toggle_fullscreen.emit(false)
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("flashlight"):
