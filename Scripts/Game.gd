@@ -13,7 +13,7 @@ var current_overlay_scene: Node = null
 func _ready():
 	GameManager.toggle_fullscreen.connect(_on_fullscreen_toggled)
 	GameManager.change_overlay.connect(_apply_layout)
-	_apply_layout("res://Scenes/Overlay/PurpleOverlay.tscn") # Load your default
+	GameManager.change_overlay.emit("res://Scenes/Overlay/PurpleOverlay.tscn")
 
 func _apply_layout(scene_path: String):
 	# 1. Remove the old overlay
@@ -35,13 +35,15 @@ func _apply_layout(scene_path: String):
 		_animate_viewport(slot.global_position, target_scale)
 
 func _on_fullscreen_toggled(is_fullscreen: bool):
+	GameManager.is_fullscreen = is_fullscreen
 	if is_fullscreen:
 		var screen_size = get_viewport_rect().size
 		var full_scale = screen_size / Vector2(320, 240)
-		bg_container.hide()
 		_animate_viewport(Vector2.ZERO, full_scale)
+		tween.tween_callback(bg_container.hide)
+
 	else:
-		bg_container.show()
+		bg_container.show() 
 		var slot = current_overlay_scene.get_node("GameSlot")
 		var target_scale = slot.size / Vector2(320, 240)
 		_animate_viewport(slot.global_position, target_scale)

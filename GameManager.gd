@@ -5,6 +5,7 @@ signal change_overlay(layout_name: String)
 var target_door_id: String = ""
 var collected_world_items: Array[String] = []
 var unlocked_doors: Array[String] = []
+var is_fullscreen: bool = false
 
 var last_room_path: String = ""
 var player_position: Vector3 = Vector3.ZERO

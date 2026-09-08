@@ -20,6 +20,10 @@ func take_damage(amount: int):
 	
 func change_health(amount: int):
 	health = clamp(health + amount, 0, max_health)
+	if health <= 25:
+		GameManager.change_overlay.emit("res://Scenes/Overlay/RedOverlay.tscn")
+	else:
+		GameManager.change_overlay.emit("res://Scenes/Overlay/PurpleOverlay.tscn") # Revert if healed
 	
 func change_action(value: int):
 	action = (value == 1)

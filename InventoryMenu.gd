@@ -30,6 +30,7 @@ var item_slot_scene = preload("res://Scenes/ItemSlot.tscn")
 var time_passed: float = 0.0
 var pulse_speed: float = 0.0
 var base_colour: Color = Color(0,0,0,0)
+var was_fullscreen_before_open: bool = false
 
 func _process(delta):
 	if visible:
@@ -54,6 +55,12 @@ func _input(event):
 			open_inventory()
 			
 func open_inventory():
+	if not was_fullscreen_before_open:
+		GameManager.toggle_fullscreen.emit(true)
+		
+	get_tree().paused = true
+	show()
+	
 	await RenderingServer.frame_post_draw
 	
 	var current_frame = get_viewport().get_texture().get_image()
@@ -71,9 +78,11 @@ func close_inventory():
 	
 	weapons_btn.remove_theme_color_override("font_color")
 	supplies_btn.remove_theme_color_override("font_color")
-
 	supplies_rect.hide()
 	weapon_rect.hide()
+	
+	if not was_fullscreen_before_open:
+		GameManager.toggle_fullscreen.emit(false)
 	
 func update_health_colour():
 	var current_health = int(PlayerStats.get_health())
