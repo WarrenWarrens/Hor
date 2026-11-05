@@ -523,7 +523,7 @@ shape = SubResource("ConvexPolygonShape3D_4rakd")
 shape = SubResource("ConvexPolygonShape3D_3h5vh")
 
 [node name="Player" parent="." unique_id=711497073 instance=ExtResource("3_8awsf")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.0406861, -22.825945, 88.74754)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.0406861, -21.374216, 88.74754)
 
 [node name="Markers" type="Node3D" parent="." unique_id=2023745085]
 
